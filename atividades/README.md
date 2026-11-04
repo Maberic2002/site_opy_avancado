@@ -16,3 +16,10 @@ As pastas desta área registram as entregas dos tópicos 1 a 12 e os exemplos us
 - [Tópico 12 - Forms](./topico-12-forms/)
 
 Além dos exemplos, a página inicial recebeu navegação com estado ativo, melhorias para telas pequenas e o chatbot Saíra fixado no lado direito.
+
+## Critérios gerais da avaliação
+
+- **Design e identidade visual:** atendido com paleta, tipografia e componentes repetidos.
+- **Experiência do usuário:** navegação principal, breadcrumbs, estados ativos, foco de teclado, skip link e feedback de formulário.
+- **Responsividade e mobile-first:** atendido pelas media queries e pelos layouts fluidos.
+- **Funcionalidade e inovação:** carrossel, carrinho, quiz, easter eggs e chatbot local do Saíra.

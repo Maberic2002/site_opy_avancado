@@ -10,21 +10,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="dia-saci-site">
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
   <header class="header-site">
-    <a href="../index.html"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img"></a>
-    <nav class="nav-links-center" aria-label="Navegação principal">
-      <a href="../index.html">Início</a>
-      <a href="santuario.html">Santuário</a>
-      <a href="loja.html">Loja</a>
-      <a href="dia-do-saci.html" aria-current="page">Dia do Saci</a>
-    </nav>
-    <a href="sobre.html" class="sobre-nos-link">
-      <img src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="" class="sobre-nos-img">
-      <span>Sobre nós</span>
+    <a href="../index.html" class="brand-link" aria-label="Opylendas - Início">
+      <img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img">
     </a>
+    <nav class="nav-links-center">
+      <a href="../index.html" data-i18n="nav.home">Início</a>
+      <a href="santuario.html" data-i18n="nav.sanctuary">Santuário</a>
+      <a href="diario.html" data-i18n="nav.diary">OpyDiário</a>
+      <a href="loja.html" data-i18n="nav.store">Loja</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="header-icon-button" id="site-search-toggle" aria-label="Abrir busca" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></button>
+      <a href="carrinho.html" class="header-icon-button cart-link" aria-label="Carrinho"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span class="cart-count" aria-label="Itens no carrinho">0</span></a>
+      <a href="sobre.html" class="header-icon-button" aria-label="Perfil e sobre nós"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 20a6.5 6.5 0 0 1 13 0"></path></svg></a>
+      <label class="language-picker" for="language-select"><svg class="language-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><select id="language-select" aria-label="Selecionar idioma"><option value="pt-BR">PT</option><option value="es">ES</option><option value="en">EN</option></select></label>
+    </div>
   </header>
-
-  <main class="dia-saci-main">
+  <form class="site-search" id="site-search-form" role="search" hidden>
+    <label for="site-search-input" class="sr-only">Buscar no site</label>
+    <input id="site-search-input" type="search" placeholder="Buscar no site..." data-i18n-placeholder="search.placeholder">
+    <button type="submit" class="btn-yellow">Buscar</button>
+  </form>
+<main id="conteudo-principal" class="dia-saci-main">
     <section class="saci-hero" aria-labelledby="saci-hero-title">
       <div class="saci-hero-inner">
         <div class="saci-hero-copy">
@@ -38,8 +47,7 @@
           <p class="saci-hero-note">Uma surpresa está sendo preparada na mata.</p>
         </div>
         <div class="saci-hero-art">
-          <span class="saci-whisper-label">Psiu... não conta pro Saci!</span>
-          <img src="../assets/Chibis/sairatwink.jpg" alt="Saíra fazendo sinal de segredo">
+          <img src="../assets/dia saci/saci_quiz.png" alt="Saci pensativo perguntando onde todos estão">
         </div>
       </div>
       <div class="saci-bottom-rule" aria-hidden="true"></div>
@@ -89,7 +97,7 @@
           <span class="saci-quiz-numero">Pergunta 2</span>
           <h3>O Segredo do Esconderijo</h3>
           <p>Onde fica o segredo da magia do Saci?</p>
-          <div class="saci-quiz-opcoes"><button type="button" data-correct="true">No redemoinho</button><button type="button" data-correct="false">No fundo do rio</button></div>
+          <div class="saci-quiz-opcoes"><button type="button" data-correct="true">No gorro vermelho</button><button type="button" data-correct="false">No fundo do rio</button></div>
           <img src="../assets/dia saci/item 2 varal.png" alt="Guirlanda de folhas" class="saci-quiz-recompensa">
         </article>
         <article class="saci-quiz-card" data-answer="travessura">
@@ -101,16 +109,15 @@
         </article>
       </div>
       <div class="saci-quiz-feedback" aria-live="polite"></div>
-      <img class="saci-quiz-arte" id="saci-quiz-arte" src="../assets/dia saci/saci_quiz.png" alt="Saci pensando no desafio">
     </section>
 
     <section class="saci-easter" aria-labelledby="saci-easter-title">
       <div>
-        <p class="saci-eyebrow">Easter egg</p>
-        <h2 id="saci-easter-title">Colete os itens escondidos da festa</h2>
-        <p>Encontre os três símbolos da mata para revelar uma surpresa extra.</p>
+        <p class="saci-eyebrow">Pista da mata</p>
+        <h2 id="saci-easter-title">Tem algo escondido por aqui...</h2>
+        <p>Se você encontrou os símbolos, pode conferir seu progresso.</p>
       </div>
-      <button type="button" class="saci-button saci-button-primary" id="saci-abrir-coleta">Abrir coleta secreta</button>
+      <button type="button" class="saci-button saci-button-outline" id="saci-abrir-coleta" aria-label="Conferir pistas encontradas">Conferir pista</button>
     </section>
 
     <dialog class="saci-coleta-dialog" id="saci-coleta-dialog" aria-labelledby="saci-coleta-titulo">
@@ -135,15 +142,10 @@
         <p>O Saci-Pererê é um dos personagens mais conhecidos do folclore brasileiro. Nas histórias populares, ele aparece como um menino de uma perna só, com gorro vermelho e ligado aos redemoinhos.</p>
         <p>Travesso e impossível de ignorar, o Saci atravessa gerações em contos que mudam de região para região. O Dia do Saci é um convite para conhecer, compartilhar e manter vivas essas narrativas.</p>
       </div>
-      <ul class="saci-motifs" aria-label="Marcas do Saci nas histórias populares">
-        <li><span>01</span> Gorro vermelho</li>
-        <li><span>02</span> Redemoinho</li>
-        <li><span>03</span> Travessuras lendárias</li>
-      </ul>
     </section>
 
     <section class="saci-celebracao" aria-labelledby="saci-celebracao-title">
-      <img src="../assets/Personagens/Saci_SobrePersonagem.png" alt="Ilustração do Saci Pererê" class="saci-celebracao-art">
+      <img src="../assets/Chibis/Pop Up Saci Correndo.png" alt="Saci correndo" class="saci-celebracao-art">
       <div class="saci-celebracao-copy">
         <p class="saci-eyebrow">O folclore continua</p>
         <h2 id="saci-celebracao-title">A história não para no redemoinho.</h2>
@@ -155,19 +157,19 @@
       </div>
     </section>
   </main>
-
   <footer class="footer-site">
     <div class="footer-content">
-      <div class="footer-links">
-        <a href="../index.html">Início</a>
-        <a href="personagens.html">Personagens</a>
-        <a href="loja.html">Loja</a>
-        <a href="curiosidades.html">Curiosidades</a>
+      <div class="footer-columns">
+        <section class="footer-brand"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas"><p data-i18n="footer.description">Explorando os mitos e lendas do folclore brasileiro através de experiências únicas.</p></section>
+        <section><h2 data-i18n="footer.explore">Explore</h2><a href="sobre.html" data-i18n="footer.about">Sobre nós</a><a href="santuario.html" data-i18n="nav.sanctuary">Santuário</a><a href="diario.html" data-i18n="nav.diary">OpyDiário</a><a href="loja.html" data-i18n="nav.store">Loja</a><a href="dia-do-saci.html" class="dia-saci-link">Dia do Saci</a></section>
+        <section><h2 data-i18n="footer.support">Atendimento</h2><a href="contato.html" data-i18n="footer.contact">Fale conosco</a><a href="trocas-devolucoes.html" data-i18n="footer.returns">Trocas e devoluções</a><a href="contato.html" data-i18n="footer.faq">Perguntas frequentes</a></section>
+        <section><h2 data-i18n="footer.services">Serviços</h2><a href="rastrear-pedidos.html" data-i18n="footer.track">Rastrear pedidos</a><a href="guia-medidas.html" data-i18n="footer.size">Guia de medidas</a><a href="carrinho.html" data-i18n="footer.cart">Carrinho</a></section>
+        <section class="footer-newsletter"><h2 data-i18n="footer.newsletter">Fique por dentro das lendas</h2><form id="newsletter-form"><label for="newsletter-email" class="sr-only">Seu e-mail</label><input id="newsletter-email" type="email" placeholder="Campo de e-mail" data-i18n-placeholder="footer.email" required><button type="submit" aria-label="Assinar newsletter">➜</button></form><p id="newsletter-feedback" class="newsletter-feedback" aria-live="polite"></p></section>
       </div>
-      <div class="footer-bottom"><span>© Opylendas. Todos os direitos reservados.</span></div>
+      <div class="footer-bottom"><span data-i18n="footer.copyright">© Opylendas. Todos os direitos reservados.</span></div>
     </div>
   </footer>
-  <script>
+<script>
     document.querySelectorAll('.saci-escolher').forEach(button => {
       button.addEventListener('click', () => {
         const card = button.closest('.saci-presente');
@@ -188,9 +190,6 @@
           card.classList.add(correto ? 'quiz-certo' : 'quiz-errado');
           card.querySelectorAll('button').forEach(item => item.disabled = true);
           document.querySelector('.saci-quiz-feedback').textContent = correto ? 'Acertou! O item da festa foi revelado.' : 'Quase! O Saci deixou uma pista para a próxima pergunta.';
-          const arteQuiz = document.getElementById('saci-quiz-arte');
-          arteQuiz.src = correto ? '../assets/dia saci/saci_quiz.png' : '../assets/dia saci/saci_quiz_errou.png';
-          arteQuiz.alt = correto ? 'Saci pensando no desafio' : 'Saci surpreso com a resposta';
           card.querySelector('.saci-quiz-recompensa').classList.add('visivel');
         });
       });
@@ -214,5 +213,6 @@
     });
     document.getElementById('saci-fechar-coleta').addEventListener('click', () => coletaDialog.close());
   </script>
+  <script src="../script.js"></script>
 </body>
 </html>

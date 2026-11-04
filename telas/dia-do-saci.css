@@ -88,18 +88,18 @@
   position: relative;
   display: flex;
   min-height: 360px;
-  align-items: center;
+  align-items: end;
   justify-content: center;
 }
 
 .saci-hero-art img {
   display: block;
-  width: min(100%, 390px);
-  max-height: 360px;
-  border-radius: 8px;
+  width: min(100%, 430px);
+  max-height: 400px;
   object-fit: contain;
   filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.32));
-  animation: saci-hero-bob 4s ease-in-out infinite;
+  transform: translateY(78px);
+  animation: none;
 }
 
 .saci-whisper-label { position: absolute; top: 8%; color: var(--saci-gold); font-size: 0.92rem; font-weight: 700; }
@@ -141,12 +141,20 @@
 .saci-quiz-recompensa { display: none; position: absolute; top: 10px; right: 10px; width: 54px; height: 54px; object-fit: contain; }
 .saci-quiz-recompensa.visivel { display: block; }
 .saci-quiz-feedback { min-height: 1.5em; margin-top: 20px; color: var(--saci-gold); font-weight: 700; }
-.saci-quiz-arte { position: absolute; right: 4%; bottom: -34px; width: 110px; opacity: 0.25; pointer-events: none; }
 
-.saci-easter { display: flex; width: min(1120px, 90%); align-items: center; justify-content: space-between; gap: 24px; margin: 42px auto; padding: 22px 28px; background: var(--saci-ink); color: var(--saci-cream); }
-.saci-easter h2 { margin: 0 0 7px; color: var(--saci-cream); font-family: 'Noto Serif', serif; font-size: 1.35rem; }
-.saci-easter p:last-child { margin: 0; color: var(--saci-muted); font-size: 0.88rem; }
+.saci-easter { display: flex; width: min(1120px, 90%); align-items: center; justify-content: space-between; gap: 24px; margin: 22px auto; padding: 12px 18px; border: 1px solid rgba(229, 187, 98, 0.35); background: rgba(26, 23, 21, 0.92); color: var(--saci-cream); }
+.saci-easter h2 { margin: 0 0 3px; color: var(--saci-cream); font-family: 'Noto Serif', serif; font-size: 1rem; }
+.saci-easter p:last-child { margin: 0; color: var(--saci-muted); font-size: 0.76rem; }
 .saci-easter .saci-eyebrow { color: var(--saci-gold); }
+.saci-easter .saci-button-outline {
+  border-color: var(--saci-red-bright);
+  background: var(--saci-red-bright);
+  color: #fff;
+}
+.saci-easter .saci-button-outline:hover {
+  background: #ef5946;
+  color: #fff;
+}
 .saci-coleta-dialog { width: min(680px, calc(100vw - 28px)); padding: 30px; border: 2px solid var(--saci-gold); background: var(--saci-cream); color: var(--saci-ink); }
 .saci-coleta-dialog::backdrop { background: rgba(7, 24, 14, 0.78); }
 .saci-coleta-fechar { position: absolute; top: 8px; right: 10px; border: 0; background: transparent; color: var(--saci-ink); cursor: pointer; font-size: 1.7rem; }
@@ -159,6 +167,57 @@
 .saci-brindes { display: flex; align-items: center; gap: 18px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #c8b997; }
 .saci-brindes p { margin: 0 auto 0 0; color: var(--saci-leaf); font-family: 'Noto Serif', serif; }
 .saci-brindes img { width: 84px; height: 84px; object-fit: contain; }
+
+.item-secreto {
+  position: fixed;
+  z-index: 1150;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 3px;
+  place-items: center;
+  border: 1px solid rgba(229, 187, 98, 0.7);
+  border-radius: 50%;
+  background: rgba(26, 23, 21, 0.82);
+  cursor: pointer;
+  opacity: 0.76;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.item-secreto:hover,
+.item-secreto:focus-visible {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.item-secreto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-secreto-1 { top: 28%; right: 3%; }
+.item-secreto-2 { top: 52%; left: 3%; }
+.item-secreto-3 { bottom: 18%; right: 5%; }
+
+.item-secreto-aviso {
+  position: fixed;
+  z-index: 1200;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  gap: 3px;
+  max-width: min(260px, calc(100vw - 2rem));
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--saci-gold);
+  background: var(--saci-ink);
+  color: var(--saci-cream);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  font-size: 0.8rem;
+}
+
+.item-secreto-aviso span { color: var(--saci-muted); }
 
 .saci-lenda {
   display: grid;
@@ -200,7 +259,7 @@
   color: var(--saci-cream);
 }
 
-.saci-celebracao-art { display: block; width: min(100%, 300px); max-height: 340px; justify-self: center; object-fit: contain; }
+.saci-celebracao-art { display: block; width: min(100%, 300px); max-height: 340px; align-self: end; justify-self: center; margin-bottom: 0; object-fit: contain; object-position: bottom; }
 .saci-celebracao h2 { max-width: 620px; color: var(--saci-cream); }
 .saci-celebracao-copy > p:not(.saci-eyebrow) { max-width: 620px; margin: 18px 0 24px; color: #e4e9df; }
 .saci-text-link { color: var(--saci-cream); font-size: 0.9rem; font-weight: 700; text-decoration-color: var(--saci-gold); text-underline-offset: 4px; }
@@ -216,7 +275,7 @@
   .saci-hero-inner { min-height: 0; grid-template-columns: 1fr; gap: 12px; padding: 56px 0 32px; }
   .saci-hero h1 { font-size: clamp(2.7rem, 10vw, 4rem); }
   .saci-hero-art { min-height: 250px; }
-  .saci-hero-art img { width: min(78%, 300px); max-height: 280px; }
+  .saci-hero-art img { width: min(78%, 300px); max-height: 320px; transform: translateY(46px); }
   .saci-whisper-label { top: 0; }
   .saci-presentes-grid { grid-template-columns: 1fr; gap: 34px; }
   .saci-presente-arte { width: min(78%, 270px); aspect-ratio: 0.78; }
@@ -225,7 +284,7 @@
   .saci-motifs { grid-template-columns: 1fr; }
   .saci-motifs li { padding: 12px 0; border-bottom: 1px solid rgba(26, 23, 21, 0.12); }
   .saci-celebracao { grid-template-columns: 1fr; gap: 20px; padding: 44px 7%; }
-  .saci-celebracao-art { max-height: 260px; }
+  .saci-celebracao-art { max-height: 260px; margin-bottom: 0; }
   .saci-quiz-cards { grid-template-columns: 1fr; }
   .saci-easter { align-items: flex-start; flex-direction: column; }
   .saci-itens-coleta { grid-template-columns: 1fr; }

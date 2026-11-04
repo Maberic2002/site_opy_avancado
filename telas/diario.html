@@ -5,56 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Opylendas - OpyDiário</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="diario.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
   <header class="header-site">
-    <a href="../index.html"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img"></a>
-    <nav class="nav-links-center">
-      <a href="../index.html">Início</a>
-      <a href="santuario.html">Santuário</a>
-      <a href="diario.html">OpyDiário</a>
-      <a href="loja.html">Loja</a>
-    </nav>
-    <a href="sobre.html" class="sobre-nos-link">
-      <img src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="Sobre nós" class="sobre-nos-img">
-      <span>Sobre nós</span>
+    <a href="../index.html" class="brand-link" aria-label="Opylendas - Início">
+      <img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img">
     </a>
-  </header>
-
-  <main class="main-container">
-    <div class="breadcrumb"><a href="../index.html">Início</a> > OpyDiário</div>
-    <h1 class="page-title">OpyDiário em manutenção</h1>
-    
-    <div class="diario-manutencao">
-      <div class="diario-manutencao-texto">
-        <h2>Estamos preparando novidades</h2>
-        <p>O OpyDiário é a nossa rede social para compartilhar fanarts e está temporariamente em manutenção.</p>
-        <p><em>Volte em breve para explorar os novos conteúdos.</em></p>
-      </div>
-      <div class="diario-manutencao-arte">
-        <img src="../assets/Chibis/Mapinguari Chibi Manutenção.png" alt="Mapinguari em manutenção">
-      </div>
+    <nav class="nav-links-center">
+      <a href="../index.html" data-i18n="nav.home">Início</a>
+      <a href="santuario.html" data-i18n="nav.sanctuary">Santuário</a>
+      <a href="diario.html" data-i18n="nav.diary">OpyDiário</a>
+      <a href="loja.html" data-i18n="nav.store">Loja</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="header-icon-button" id="site-search-toggle" aria-label="Abrir busca" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></button>
+      <a href="carrinho.html" class="header-icon-button cart-link" aria-label="Carrinho"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span class="cart-count" aria-label="Itens no carrinho">0</span></a>
+      <a href="sobre.html" class="header-icon-button" aria-label="Perfil e sobre nós"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 20a6.5 6.5 0 0 1 13 0"></path></svg></a>
+      <label class="language-picker" for="language-select"><svg class="language-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><select id="language-select" aria-label="Selecionar idioma"><option value="pt-BR">PT</option><option value="es">ES</option><option value="en">EN</option></select></label>
     </div>
+  </header>
+  <form class="site-search" id="site-search-form" role="search" hidden>
+    <label for="site-search-input" class="sr-only">Buscar no site</label>
+    <input id="site-search-input" type="search" placeholder="Buscar no site..." data-i18n-placeholder="search.placeholder">
+    <button type="submit" class="btn-yellow">Buscar</button>
+  </form>
+<main id="conteudo-principal" class="opydiario-page">
+    <section class="diario-topo"><div class="diario-breadcrumb"><a href="../index.html">Início</a><span>&gt;</span><span>OpyDiário</span></div><p class="diario-eyebrow">Diário de bordo OpyLendas</p><h1>Histórias que continuam vivas</h1></section>
+    <section class="diario-boasvindas"><div class="diario-boasvindas-arte"><span class="diario-coracao diario-coracao-um">♥</span><span class="diario-coracao diario-coracao-dois">♥</span><img src="../assets/opydiario/Diário de Bordo_Exemplo imagem 2.png" alt="Registro do diário de bordo"></div><div class="diario-boasvindas-texto"><h2>Um espaço para acompanhar o universo OpyLendas de perto.</h2><p>Nos bastidores, nas fanarts e nos encontros, cada registro ajuda a contar uma história maior. Explore as criações da comunidade e os momentos que fazem esse mundo crescer.</p></div></section>
+    <section class="diario-bastidores"><div class="diario-bastidores-principal"><div class="diario-bastidores-cabecalho"><div class="diario-titulo-com-icone"><span class="diario-icone-linha">✦</span><div><h2>Bastidores da criação</h2><p>Veja como uma ideia ganha forma</p></div></div><div class="diario-etapas" role="tablist"><button type="button" aria-selected="true">Ideia</button><button type="button" aria-selected="false">Processo</button><button type="button" aria-selected="false">Resultado</button></div></div><div class="diario-bastidores-corpo"><div class="diario-bastidores-copy"><p class="diario-eyebrow">Diário de bordo</p><h3>De um rascunho para o mundo</h3><p>Personagens, produtos e histórias começam com pequenos traços e muita imaginação.</p><span class="diario-registro">Registro 01 · OpyLendas</span></div><figure class="diario-processo-imagem"><img src="../assets/opydiario/Diário de Bordo_Exemplo video 1.png" alt="Exemplo de processo criativo"><figcaption>Um pedacinho do processo criativo.</figcaption></figure></div></div><aside class="diario-processo-lateral"><h2>Do caderno para a tela</h2><div class="diario-processo-item"><img src="../assets/opydiario/Fanart 1.png" alt="Fanart do universo OpyLendas"><div><h3>Ideias que circulam</h3><span>Compartilhadas pela comunidade</span><p>Cada olhar encontra um jeito novo de contar a lenda.</p></div></div><div class="diario-processo-item"><img src="../assets/opydiario/Evento 1 Opylendas.png" alt="Evento OpyLendas"><div><h3>Encontros</h3><span>Histórias fora da tela</span><p>O universo também vive nos encontros.</p></div></div></aside></section>
+    <section class="diario-comunidade"><div><div class="diario-secao-cabecalho"><div class="diario-titulo-com-icone"><span class="diario-icone-linha">♡</span><div><p class="diario-eyebrow">Mural da comunidade</p><h2>Fanarts que fazem parte da história</h2></div></div><p>Criações de quem também vive as lendas.</p></div><div class="diario-fanarts-grid"><figure class="diario-polaroid"><img src="../assets/opydiario/Fanart 1.png" alt="Fanart 1"><figcaption>Traços da mata</figcaption></figure><figure class="diario-polaroid"><img src="../assets/opydiario/Fanart 2.png" alt="Fanart 2"><figcaption>Uma nova visão</figcaption></figure><figure class="diario-polaroid"><img src="../assets/opydiario/Fanart 3.png" alt="Fanart 3"><figcaption>Entre mundos</figcaption></figure><figure class="diario-polaroid"><img src="../assets/opydiario/Fanart 4.png" alt="Fanart 4"><figcaption>Personagens</figcaption></figure><figure class="diario-polaroid"><img src="../assets/opydiario/Fanart 5.png" alt="Fanart 5"><figcaption>Histórias vivas</figcaption></figure></div></div><aside class="diario-convite"><span class="diario-convite-coracao">♥</span><h3>Você também cria?</h3><p>Compartilhe sua arte e ajude a expandir o universo OpyLendas.</p><a href="contato.html">Fale conosco ↗</a><a href="personagens.html">Conheça os personagens</a></aside></section>
+    <section class="diario-participacoes"><div class="diario-cosplays"><div class="diario-subsecao-titulo"><p class="diario-eyebrow">Participações</p><h2>Cosplays</h2></div><div class="diario-cosplay-imagens"><figure><img src="../assets/opydiario/Cosplay 1_Naiá.png" alt="Cosplay de Naiá"><figcaption>Naiá</figcaption></figure><figure><img src="../assets/opydiario/Cosplay 2_Jaciel.png" alt="Cosplay de Jaciel"><figcaption>Jaciel</figcaption></figure></div><a class="diario-link-seta" href="contato.html">Ver mais <span>→</span></a></div><div class="diario-clientes"><div class="diario-subsecao-titulo"><p class="diario-eyebrow">OpyLendas por aí</p><h2>Clientes e colecionadores</h2></div><div class="diario-clientes-grid"><figure><img src="../assets/opydiario/Cliente 1_Camiseta.png" alt="Cliente com camiseta OpyLendas"><figcaption>Estilo que conta histórias</figcaption></figure><figure><img src="../assets/opydiario/Cliente 2 Negra_Pelucias.png" alt="Cliente com pelúcias OpyLendas"><figcaption>Companhia para a aventura</figcaption></figure><figure><img src="../assets/opydiario/Cliente 3_Garrafa Saci.png" alt="Cliente com garrafa do Saci"><figcaption>Lendas no dia a dia</figcaption></figure></div><a class="diario-link-seta" href="loja.html">Conhecer a loja <span>→</span></a></div></section>
+    <section class="diario-eventos"><div class="diario-eventos-cabecalho"><h2>Encontros e eventos</h2><a href="contato.html">Ver registros ↗</a></div><div class="diario-eventos-grid"><article class="diario-evento"><img src="../assets/opydiario/Evento 1 Opylendas.png" alt="Evento OpyLendas"><div><span class="diario-evento-selo">Evento OpyLendas</span><h3>Quando a lenda encontra a comunidade</h3><p>Momentos especiais compartilhados com quem acompanha nosso universo.</p><span>OpyLendas · 2026</span></div></article><article class="diario-evento"><img src="../assets/opydiario/Evento 2 opylendas.png" alt="Segundo evento OpyLendas"><div><span class="diario-evento-selo">Registro especial</span><h3>Um dia para guardar na memória</h3><p>Mais um capítulo construído junto com a comunidade.</p><span>OpyLendas · 2026</span></div></article></div></section>
+    <section class="diario-final"><article class="diario-contos"><div class="diario-contos-copy"><p class="diario-eyebrow">Para continuar a jornada</p><h2>Contos para levar com você</h2><p>Descubra produtos e histórias inspirados no folclore brasileiro.</p><a class="diario-link-seta" href="loja.html">Ir para a loja <span>→</span></a></div><img src="../assets/Chibis/Saíra-7-Cores Roupa Larga.png" alt="Saíra"></article><article class="diario-quiz"><p class="diario-eyebrow">Desafio rápido</p><h2>Qual guardião combina com você?</h2><img src="../assets/opydiario/Fanart 3.png" alt="Personagens OpyLendas"><p>Responda e descubra uma nova pista.</p><button class="diario-quiz-abrir" type="button" onclick="document.getElementById('diario-quiz-dialog').showModal()">Abrir desafio</button></article></section>
   </main>
-
+  <dialog id="diario-quiz-dialog" class="diario-quiz-dialog"><form method="dialog"><button class="diario-quiz-fechar" aria-label="Fechar">×</button></form><h2>Você prefere explorar a mata ou seguir um redemoinho?</h2><div class="diario-quiz-opcoes"><button type="button" data-resultado="O Mapinguari pode ser seu guardião.">Explorar a mata</button><button type="button" data-resultado="O Saci combina com sua curiosidade.">Seguir o redemoinho</button></div><p class="diario-quiz-resultado" aria-live="polite"></p><a class="diario-quiz-link" href="personagens.html">Conhecer personagens ↗</a></dialog>
   <footer class="footer-site">
     <div class="footer-content">
-      <div class="footer-links">
-        <a href="sobre.html">Sobre nós</a>
-        <a href="contato.html">Fale conosco</a>
-        <a href="trocas-devolucoes.html">Trocas e devoluções</a>
-        <a href="rastrear-pedidos.html">Rastrear pedidos</a>
-        <a href="guia-medidas.html">Guia de medidas</a>
-        <a href="carrinho.html">Carrinho</a>
+      <div class="footer-columns">
+        <section class="footer-brand"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas"><p data-i18n="footer.description">Explorando os mitos e lendas do folclore brasileiro através de experiências únicas.</p></section>
+        <section><h2 data-i18n="footer.explore">Explore</h2><a href="sobre.html" data-i18n="footer.about">Sobre nós</a><a href="santuario.html" data-i18n="nav.sanctuary">Santuário</a><a href="diario.html" data-i18n="nav.diary">OpyDiário</a><a href="loja.html" data-i18n="nav.store">Loja</a><a href="dia-do-saci.html" class="dia-saci-link">Dia do Saci</a></section>
+        <section><h2 data-i18n="footer.support">Atendimento</h2><a href="contato.html" data-i18n="footer.contact">Fale conosco</a><a href="trocas-devolucoes.html" data-i18n="footer.returns">Trocas e devoluções</a><a href="contato.html" data-i18n="footer.faq">Perguntas frequentes</a></section>
+        <section><h2 data-i18n="footer.services">Serviços</h2><a href="rastrear-pedidos.html" data-i18n="footer.track">Rastrear pedidos</a><a href="guia-medidas.html" data-i18n="footer.size">Guia de medidas</a><a href="carrinho.html" data-i18n="footer.cart">Carrinho</a></section>
+        <section class="footer-newsletter"><h2 data-i18n="footer.newsletter">Fique por dentro das lendas</h2><form id="newsletter-form"><label for="newsletter-email" class="sr-only">Seu e-mail</label><input id="newsletter-email" type="email" placeholder="Campo de e-mail" data-i18n-placeholder="footer.email" required><button type="submit" aria-label="Assinar newsletter">➜</button></form><p id="newsletter-feedback" class="newsletter-feedback" aria-live="polite"></p></section>
       </div>
-      <div class="footer-bottom">
-        <span>© Opylendas. Todos os direitos reservados.</span>
-      </div>
+      <div class="footer-bottom"><span data-i18n="footer.copyright">© Opylendas. Todos os direitos reservados.</span></div>
     </div>
   </footer>
-
-  <script src="../script.js"></script>
+<script src="../script.js"></script>
+  <script>
+    document.querySelectorAll('.diario-etapas button').forEach(button => button.addEventListener('click', () => { document.querySelectorAll('.diario-etapas button').forEach(item => item.setAttribute('aria-selected', 'false')); button.setAttribute('aria-selected', 'true'); }));
+    document.querySelectorAll('.diario-quiz-opcoes button').forEach(button => button.addEventListener('click', () => { const result = document.querySelector('.diario-quiz-resultado'); result.textContent = button.dataset.resultado; }));
+  </script>
 </body>
 </html>

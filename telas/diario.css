@@ -169,7 +169,18 @@
 .diario-quiz-abrir { min-height: 40px; padding: 9px 15px; border: 0; border-radius: 999px; background: var(--diario-orange); color: white; cursor: pointer; font: inherit; font-size: 0.8rem; font-weight: 700; }
 .diario-quiz-abrir:hover { background: var(--diario-rust); }
 
-.diario-quiz-dialog { width: min(540px, calc(100vw - 28px)); padding: 30px; border: 1px solid var(--diario-green); background: var(--diario-cream); color: var(--diario-ink); }
+.diario-quiz-dialog {
+  --diario-green: #294b36;
+  --diario-cream: #fffcee;
+  --diario-ink: #26382d;
+  --diario-orange: #c95224;
+  --diario-rust: #a84221;
+  width: min(540px, calc(100vw - 28px));
+  padding: 30px;
+  border: 1px solid var(--diario-green);
+  background: var(--diario-cream);
+  color: var(--diario-ink);
+}
 .diario-quiz-dialog::backdrop { background: rgba(10, 28, 17, 0.72); }
 .diario-quiz-dialog > form { position: absolute; top: 8px; right: 8px; }
 .diario-quiz-fechar { width: 36px; height: 36px; border: 0; background: transparent; color: var(--diario-green); cursor: pointer; font-size: 1.6rem; }

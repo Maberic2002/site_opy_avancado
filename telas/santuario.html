@@ -5,56 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Opylendas - Santuário das Lendas</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="santuario.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header class="header-site">
-    <a href="../index.html"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img"></a>
-    <nav class="nav-links-center">
-      <a href="../index.html">Início</a>
-      <a href="santuario.html">Santuário</a>
-      <a href="diario.html">OpyDiário</a>
-      <a href="loja.html">Loja</a>
-    </nav>
-    <a href="sobre.html" class="sobre-nos-link">
-      <img src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="Sobre nós" class="sobre-nos-img">
-      <span>Sobre nós</span>
+    <a href="../index.html" class="brand-link" aria-label="Opylendas - Início">
+      <img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img">
     </a>
-  </header>
-
-  <main class="main-container">
-    <div class="breadcrumb"><a href="../index.html">Início</a> &gt; Santuário</div>
-    <h1 class="page-title">Santuário em manutenção</h1>
-
-    <div class="diario-manutencao">
-      <div class="diario-manutencao-texto">
-        <h2>Estamos criando novos mistérios</h2>
-        <p>O Santuário das Lendas está temporariamente em manutenção enquanto preparamos novas histórias, artes e descobertas do universo OpyLendas.</p>
-        <p><em>Em breve, o espaço sagrado das lendas voltará a abrir suas portas.</em></p>
-      </div>
-      <div class="diario-manutencao-arte">
-        <img src="../assets/Chibis/Mapinguari Chibi Manutenção.png" alt="Mapinguari em manutenção">
-      </div>
+    <nav class="nav-links-center">
+      <a href="../index.html" data-i18n="nav.home">Início</a>
+      <a href="santuario.html" data-i18n="nav.sanctuary">Santuário</a>
+      <a href="diario.html" data-i18n="nav.diary">OpyDiário</a>
+      <a href="loja.html" data-i18n="nav.store">Loja</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="header-icon-button" id="site-search-toggle" aria-label="Abrir busca" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></button>
+      <a href="carrinho.html" class="header-icon-button cart-link" aria-label="Carrinho"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span class="cart-count" aria-label="Itens no carrinho">0</span></a>
+      <a href="sobre.html" class="header-icon-button" aria-label="Perfil e sobre nós"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 20a6.5 6.5 0 0 1 13 0"></path></svg></a>
+      <label class="language-picker" for="language-select"><svg class="language-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><select id="language-select" aria-label="Selecionar idioma"><option value="pt-BR">PT</option><option value="es">ES</option><option value="en">EN</option></select></label>
     </div>
+  </header>
+  <form class="site-search" id="site-search-form" role="search" hidden>
+    <label for="site-search-input" class="sr-only">Buscar no site</label>
+    <input id="site-search-input" type="search" placeholder="Buscar no site..." data-i18n-placeholder="search.placeholder">
+    <button type="submit" class="btn-yellow">Buscar</button>
+  </form>
+<main id="conteudo-principal" class="santuario-experiencia">
+    <section class="santuario-abertura">
+      <div class="santuario-breadcrumb"><a href="../index.html">Início</a><span>&gt;</span><span>Santuário</span></div>
+      <p class="santuario-selo">Arquivo vivo OpyLendas</p>
+      <h1>Santuário das Lendas</h1>
+      <p>Entre nas histórias, conheça seus guardiões e descubra as raízes do nosso universo.</p>
+    </section>
+    <section class="santuario-selecao" aria-labelledby="santuario-selecao-titulo">
+      <div class="santuario-selecao-cabecalho"><div><p class="santuario-selo">Escolha uma lenda</p><h2 id="santuario-selecao-titulo">Guardiões do folclore</h2></div><span class="santuario-contagem">3 histórias para explorar</span></div>
+      <div class="santuario-lendas">
+        <button class="santuario-lenda santuario-lenda-saci selecionada" data-lenda="saci"><span class="santuario-lenda-numero">01 / FOGO E ESPERTEZA</span><strong class="santuario-lenda-nome">Saci</strong><img class="santuario-lenda-icone" src="../assets/santuario/icone_saci.png" alt="Ilustração do Saci"><span class="santuario-lenda-acao">Abrir ficha <span>↘</span></span></button>
+        <button class="santuario-lenda santuario-lenda-mapinguari" data-lenda="mapinguari"><span class="santuario-lenda-numero">02 / FLORESTA E MISTÉRIO</span><strong class="santuario-lenda-nome">Mapinguari</strong><img class="santuario-lenda-icone" src="../assets/santuario/icone_mapinguari.png" alt="Ilustração do Mapinguari"><span class="santuario-lenda-acao">Abrir ficha <span>↘</span></span></button>
+        <button class="santuario-lenda santuario-lenda-cuca" data-lenda="cuca"><span class="santuario-lenda-numero">03 / ENCANTO E MAGIA</span><strong class="santuario-lenda-nome">Cuca</strong><img class="santuario-lenda-icone" src="../assets/santuario/icone_cuca.png" alt="Ilustração da Cuca"><span class="santuario-lenda-acao">Abrir ficha <span>↘</span></span></button>
+      </div>
+    </section>
+    <section class="santuario-ficha" aria-live="polite">
+      <div class="santuario-ficha-arte" id="santuario-ficha-arte"><span class="santuario-ficha-assinatura">Uma presença entre as árvores</span></div>
+      <div class="santuario-ficha-conteudo"><p class="santuario-selo">Ficha da lenda</p><h2 id="santuario-ficha-titulo">Saci</h2><p id="santuario-ficha-descricao" class="santuario-ficha-descricao">Travesso e veloz, o Saci protege os segredos da mata e transforma qualquer caminho em uma aventura.</p><dl class="santuario-dados"><div><dt>Origem</dt><dd id="santuario-ficha-origem">Folclore brasileiro</dd></div><div><dt>Marca</dt><dd id="santuario-ficha-marca">Redemoinho e gorro vermelho</dd></div><div><dt>Território</dt><dd id="santuario-ficha-territorio">Matas e caminhos</dd></div><div><dt>Jeito</dt><dd id="santuario-ficha-jeito">Esperto e brincalhão</dd></div></dl><div class="santuario-ficha-acoes"><a class="santuario-ficha-link" href="personagens.html">Conhecer personagem ↗</a><a class="santuario-ficha-link santuario-ficha-link-secundario" href="curiosidades.html">Ver curiosidades</a></div></div>
+    </section>
   </main>
-
   <footer class="footer-site">
     <div class="footer-content">
-      <div class="footer-links">
-        <a href="sobre.html">Sobre nós</a>
-        <a href="contato.html">Fale conosco</a>
-        <a href="trocas-devolucoes.html">Trocas e devoluções</a>
-        <a href="rastrear-pedidos.html">Rastrear pedidos</a>
-        <a href="guia-medidas.html">Guia de medidas</a>
-        <a href="carrinho.html">Carrinho</a>
+      <div class="footer-columns">
+        <section class="footer-brand"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas"><p data-i18n="footer.description">Explorando os mitos e lendas do folclore brasileiro através de experiências únicas.</p></section>
+        <section><h2 data-i18n="footer.explore">Explore</h2><a href="sobre.html" data-i18n="footer.about">Sobre nós</a><a href="santuario.html" data-i18n="nav.sanctuary">Santuário</a><a href="diario.html" data-i18n="nav.diary">OpyDiário</a><a href="loja.html" data-i18n="nav.store">Loja</a><a href="dia-do-saci.html" class="dia-saci-link">Dia do Saci</a></section>
+        <section><h2 data-i18n="footer.support">Atendimento</h2><a href="contato.html" data-i18n="footer.contact">Fale conosco</a><a href="trocas-devolucoes.html" data-i18n="footer.returns">Trocas e devoluções</a><a href="contato.html" data-i18n="footer.faq">Perguntas frequentes</a></section>
+        <section><h2 data-i18n="footer.services">Serviços</h2><a href="rastrear-pedidos.html" data-i18n="footer.track">Rastrear pedidos</a><a href="guia-medidas.html" data-i18n="footer.size">Guia de medidas</a><a href="carrinho.html" data-i18n="footer.cart">Carrinho</a></section>
+        <section class="footer-newsletter"><h2 data-i18n="footer.newsletter">Fique por dentro das lendas</h2><form id="newsletter-form"><label for="newsletter-email" class="sr-only">Seu e-mail</label><input id="newsletter-email" type="email" placeholder="Campo de e-mail" data-i18n-placeholder="footer.email" required><button type="submit" aria-label="Assinar newsletter">➜</button></form><p id="newsletter-feedback" class="newsletter-feedback" aria-live="polite"></p></section>
       </div>
-      <div class="footer-bottom">
-        <span>© Opylendas. Todos os direitos reservados.</span>
-      </div>
+      <div class="footer-bottom"><span data-i18n="footer.copyright">© Opylendas. Todos os direitos reservados.</span></div>
     </div>
   </footer>
-
-  <script src="../script.js"></script>
+<script src="../script.js"></script>
+  <script>
+    const lendas = {
+      saci: { titulo: 'Saci', descricao: 'Travesso e veloz, o Saci protege os segredos da mata e transforma qualquer caminho em uma aventura.', origem: 'Folclore brasileiro', marca: 'Redemoinho e gorro vermelho', territorio: 'Matas e caminhos', jeito: 'Esperto e brincalhão', arte: '../assets/santuario/santuario_saci.png' },
+      mapinguari: { titulo: 'Mapinguari', descricao: 'Guardião imenso da floresta, conhecido por sua força e pelo mistério que acompanha seus passos.', origem: 'Lendas amazônicas', marca: 'Pegadas e floresta fechada', territorio: 'Floresta profunda', jeito: 'Forte e protetor', arte: '../assets/santuario/santuario_mapinguari.png' },
+      cuca: { titulo: 'Cuca', descricao: 'Uma feiticeira de presença marcante, cheia de histórias, poções e segredos para quem se atreve a ouvir.', origem: 'Folclore brasileiro', marca: 'Magia e encantamento', territorio: 'Casa e mata', jeito: 'Misteriosa e criativa', arte: '../assets/santuario/santuario_cuca.png' }
+    };
+    document.querySelectorAll('.santuario-lenda').forEach(button => button.addEventListener('click', () => {
+      const lenda = lendas[button.dataset.lenda];
+      document.querySelectorAll('.santuario-lenda').forEach(item => item.classList.remove('selecionada'));
+      button.classList.add('selecionada');
+      document.getElementById('santuario-ficha-titulo').textContent = lenda.titulo;
+      document.getElementById('santuario-ficha-descricao').textContent = lenda.descricao;
+      document.getElementById('santuario-ficha-origem').textContent = lenda.origem;
+      document.getElementById('santuario-ficha-marca').textContent = lenda.marca;
+      document.getElementById('santuario-ficha-territorio').textContent = lenda.territorio;
+      document.getElementById('santuario-ficha-jeito').textContent = lenda.jeito;
+      document.getElementById('santuario-ficha-arte').style.setProperty('--santuario-arte', `url("${lenda.arte}")`);
+    }));
+  </script>
 </body>
 </html>

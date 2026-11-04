@@ -2,6 +2,172 @@
 let slideAtual = 0;
 let carrosselInterval;
 
+const imagensAlternativasPorProduto = {
+  'albumdecartascolecionaveisopylendas.png': 'Álbum de Cartas Colecionáves Opylendas_posicaonova.png',
+  'brinconaia.png': 'brinconaiaoutraposi.png',
+  'camisetacremeopylendas1.png': 'Camiseta Creme Opylendas_posicaonova.png',
+  'camisetaverde.png': 'Camiseta Verde Opylendas_posicaonova.png',
+  'canecaceramicasaira7cores.png': 'Caneca Cerâmica Saíra-7-cores.png',
+  'chapeucuca.png': 'chapeucuca.png',
+  'chaveirojaciel.png': 'costaschaveirojaciel.png',
+  'chaveironaia.png': 'costaschaveironaia.png',
+  'colecaodelivrosopylendas.png': 'Coleção Livro Opylendas_posicaonova.png',
+  'diariodacuca.png': 'Diario da Cuca_posicaonova.png',
+  'luminariaopylendas.png': 'Luminaria opylendas_posicaonova.png',
+  'copotermicocomalcaecanudosaci.png': 'Copo termico com alça e canudo Saci_posicaonova.png',
+  'jogodecafeopylendas.png': 'Jogo de Cafe opylendas_posicaonova.png',
+  'colherceramicasaira7cores.png': 'Colher Ceramica Saíra-7-cores_posicaonova.png',
+  'colarnaia.png': 'Colar Naia_posicaonova.png',
+  'brochenaia.png': 'Broche Naia_posicaonova.png',
+  'presilhanaia.png': 'Presilha Naia_posicaonova.png'
+};
+
+function normalizarNomeImagem(nome) {
+  return nome
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\.[^.]+$/, '')
+    .replace(/_posicaonova$/, '')
+    .replace(/[^a-z0-9]/g, '');
+}
+
+function obterImagemAlternativa(caminhoImagem) {
+  const nomeImagem = decodeURIComponent(caminhoImagem.split('/').pop() || '');
+  const nomeNormalizado = normalizarNomeImagem(nomeImagem);
+  const nomeAlternativo = imagensAlternativasPorProduto[`${nomeNormalizado}.png`]
+    || nomeImagem.replace(/\.[^.]+$/, '_posicaonova$&');
+  return caminhoImagem.replace('/produtos/', '/produtos_posicaonova/')
+    .replace(nomeImagem, nomeAlternativo);
+}
+
+const translations = {
+  'pt-BR': {
+    'nav.home': 'Início', 'nav.sanctuary': 'Santuário', 'nav.diary': 'OpyDiário', 'nav.store': 'Loja',
+    'hero.title': 'Conheça nossos produtos!', 'hero.description': 'O vestuário e colecionáveis que trazem os mitos e lendas do folclore brasileiro direto para o seu estilo.', 'hero.cta': 'Loja',
+    'cards.characters': 'Conheça os personagens', 'cards.explore': 'Conhecer', 'cards.opy': 'Conheça o Opy', 'cards.about': 'Sobre', 'cards.secrets': 'Desvende os Segredos', 'cards.curiosities': 'Curiosidades',
+    'footer.description': 'Explorando os mitos e lendas do folclore brasileiro através de experiências únicas.', 'footer.explore': 'Explore', 'footer.about': 'Sobre nós', 'footer.support': 'Atendimento', 'footer.contact': 'Fale conosco', 'footer.returns': 'Trocas e devoluções', 'footer.faq': 'Perguntas frequentes', 'footer.services': 'Serviços', 'footer.track': 'Rastrear pedidos', 'footer.size': 'Guia de medidas', 'footer.cart': 'Carrinho', 'footer.newsletter': 'Fique por dentro das lendas', 'footer.email': 'Campo de e-mail', 'footer.copyright': '© Opylendas. Todos os direitos reservados.', 'search.placeholder': 'Buscar no site...'
+  },
+  es: {
+    'nav.home': 'Inicio', 'nav.sanctuary': 'Santuario', 'nav.diary': 'OpyDiario', 'nav.store': 'Tienda',
+    'hero.title': '¡Conoce nuestros productos!', 'hero.description': 'Ropa y coleccionables que llevan los mitos y leyendas del folclore brasileño a tu estilo.', 'hero.cta': 'Tienda',
+    'cards.characters': 'Conoce a los personajes', 'cards.explore': 'Conocer', 'cards.opy': 'Conoce a Opy', 'cards.about': 'Sobre nosotros', 'cards.secrets': 'Descubre los secretos', 'cards.curiosities': 'Curiosidades',
+    'footer.description': 'Explorando los mitos y leyendas del folclore brasileño a través de experiencias únicas.', 'footer.explore': 'Explora', 'footer.about': 'Sobre nosotros', 'footer.support': 'Atención', 'footer.contact': 'Contáctanos', 'footer.returns': 'Cambios y devoluciones', 'footer.faq': 'Preguntas frecuentes', 'footer.services': 'Servicios', 'footer.track': 'Rastrea tu pedido', 'footer.size': 'Guía de tallas', 'footer.cart': 'Carrito', 'footer.newsletter': 'Conoce las leyendas', 'footer.email': 'Correo electrónico', 'footer.copyright': '© Opylendas. Todos los derechos reservados.', 'search.placeholder': 'Buscar en el sitio...'
+  },
+  en: {
+    'nav.home': 'Home', 'nav.sanctuary': 'Sanctuary', 'nav.diary': 'OpyDiary', 'nav.store': 'Store',
+    'hero.title': 'Discover our products!', 'hero.description': 'Clothing and collectibles that bring Brazilian folklore myths and legends to your style.', 'hero.cta': 'Store',
+    'cards.characters': 'Meet the characters', 'cards.explore': 'Explore', 'cards.opy': 'Meet Opy', 'cards.about': 'About', 'cards.secrets': 'Uncover the secrets', 'cards.curiosities': 'Curiosities',
+    'footer.description': 'Exploring Brazilian folklore myths and legends through unique experiences.', 'footer.explore': 'Explore', 'footer.about': 'About us', 'footer.support': 'Support', 'footer.contact': 'Contact us', 'footer.returns': 'Returns and exchanges', 'footer.faq': 'FAQ', 'footer.services': 'Services', 'footer.track': 'Track your order', 'footer.size': 'Size guide', 'footer.cart': 'Cart', 'footer.newsletter': 'Stay inside the legends', 'footer.email': 'Email address', 'footer.copyright': '© Opylendas. All rights reserved.', 'search.placeholder': 'Search the site...'
+  }
+};
+
+function applyLanguage(language) {
+  const dictionary = translations[language] || translations['pt-BR'];
+  document.documentElement.lang = language;
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const text = dictionary[element.dataset.i18n];
+    if (text) element.textContent = text;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const text = dictionary[element.dataset.i18nPlaceholder];
+    if (text) element.placeholder = text;
+  });
+  localStorage.setItem('opylendas-language', language);
+}
+
+const languageSelect = document.getElementById('language-select');
+if (languageSelect) {
+  const savedLanguage = localStorage.getItem('opylendas-language') || 'pt-BR';
+  languageSelect.value = savedLanguage;
+  applyLanguage(savedLanguage);
+  languageSelect.addEventListener('change', event => applyLanguage(event.target.value));
+}
+
+const searchToggle = document.getElementById('site-search-toggle');
+const searchForm = document.getElementById('site-search-form');
+if (searchToggle && searchForm) {
+  const closeSearch = () => {
+    searchForm.hidden = true;
+    searchToggle.setAttribute('aria-expanded', 'false');
+    const results = document.getElementById('site-search-results');
+    if (results) results.hidden = true;
+  };
+
+  searchToggle.addEventListener('click', () => {
+    const isOpen = !searchForm.hidden;
+    if (isOpen) {
+      closeSearch();
+      return;
+    }
+
+    searchForm.hidden = false;
+    searchToggle.setAttribute('aria-expanded', 'true');
+    document.getElementById('site-search-input').focus();
+  });
+
+  document.addEventListener('click', event => {
+    const results = document.getElementById('site-search-results');
+    const target = event.target;
+    if (
+      !searchForm.hidden &&
+      !searchForm.contains(target) &&
+      !searchToggle.contains(target)
+    ) {
+      closeSearch();
+    }
+  });
+
+  searchForm.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeSearch();
+  });
+
+  searchForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const input = document.getElementById('site-search-input');
+    const query = input.value.trim().toLocaleLowerCase('pt-BR');
+    if (!query) {
+      input.focus();
+      return;
+    }
+
+    const pages = [
+      ['Início', 'index.html', 'produtos, personagens, segredos'],
+      ['Santuário', 'telas/santuario.html', 'lendas, guardiões, Saci, Mapinguari e Cuca'],
+      ['OpyDiário', 'telas/diario.html', 'bastidores, fanarts, cosplays e eventos'],
+      ['Loja', 'telas/loja.html', 'produtos, roupas e colecionáveis'],
+      ['Personagens', 'telas/personagens.html', 'Jaciel, Naiá, Saíra, Saci, Cuca e Mapinguari'],
+      ['Curiosidades', 'telas/curiosidades.html', 'universo e segredos OpyLendas'],
+      ['Dia do Saci', 'telas/dia-do-saci.html', 'festa, presentes e desafios do Saci']
+    ];
+    const matches = pages.filter(([, , description]) => description.toLocaleLowerCase('pt-BR').includes(query))
+      .concat(pages.filter(([title]) => title.toLocaleLowerCase('pt-BR').includes(query)));
+    const uniqueMatches = matches.filter((page, index, list) => list.findIndex(item => item[1] === page[1]) === index);
+    let results = document.getElementById('site-search-results');
+    if (!results) {
+      results = document.createElement('div');
+      results.id = 'site-search-results';
+      results.className = 'site-search-results';
+      searchForm.insertAdjacentElement('afterend', results);
+    }
+    const pathPrefix = window.location.pathname.includes('/telas/') ? '../' : '';
+    results.innerHTML = uniqueMatches.length
+      ? `<strong>Resultados para “${query}”</strong>${uniqueMatches.map(([title, href, description]) => `<a href="${pathPrefix}${href}"><span>${title}</span><small>${description}</small></a>`).join('')}`
+      : `<strong>Nenhum resultado encontrado</strong><small>Tente buscar por Saci, loja, lendas ou personagens.</small>`;
+    results.hidden = false;
+  });
+}
+
+const newsletterForm = document.getElementById('newsletter-form');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const feedback = document.getElementById('newsletter-feedback');
+    if (feedback) feedback.textContent = 'E-mail cadastrado com sucesso!';
+    newsletterForm.reset();
+  });
+}
+
 // === FUNÇÃO PRINCIPAL DE TROCA DE TELAS ===
 function verTela(idTela) {
   // Esconde todas as seções
@@ -73,6 +239,19 @@ function pararCarrosselAuto() {
   if (carrosselInterval) {
     clearInterval(carrosselInterval);
   }
+}
+
+const formContato = document.getElementById('form-contato');
+if (formContato) {
+  formContato.addEventListener('submit', event => {
+    event.preventDefault();
+    const feedback = document.getElementById('contato-feedback');
+    if (!feedback) return;
+
+    feedback.textContent = 'Mensagem preparada com sucesso! Em breve entraremos em contato.';
+    feedback.classList.add('form-feedback-sucesso');
+    formContato.reset();
+  });
 }
 
 // === CARRINHO ===
