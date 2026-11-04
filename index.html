@@ -14,7 +14,7 @@
       <img src="assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img">
     </a>
     <nav class="nav-links-center">
-      <a href="index.html">Início</a>
+      <a href="index.html" class="active" aria-current="page">Início</a>
       <a href="telas/santuario.html">Santuário</a>
       <a href="telas/diario.html">OpyDiário</a>
       <a href="telas/loja.html">Loja</a>
@@ -104,6 +104,40 @@
     </div>
   </footer>
 
+  <button
+    type="button"
+    id="opy-chat-toggle"
+    class="opy-chat-toggle"
+    aria-controls="opy-chat-panel"
+    aria-expanded="false">
+    <img src="assets/Chibis/sairatwink.jpg" alt="" aria-hidden="true">
+    <span>Fale com o Saíra</span>
+  </button>
+
+  <aside id="opy-chat-panel" class="opy-chat-panel hidden" aria-label="Assistente OpyLendas">
+    <div class="opy-chat-header">
+      <div>
+        <span class="opy-chat-eyebrow">Assistente OpyLendas</span>
+        <h2>Converse com o Saíra</h2>
+      </div>
+      <button type="button" id="opy-chat-close" class="opy-chat-close" aria-label="Fechar chat">×</button>
+    </div>
+    <div id="opy-chat-status" class="opy-chat-status" data-state="idle" role="status">
+      Ative a IA para conversar neste navegador.
+    </div>
+    <div id="opy-chat-messages" class="opy-chat-messages" aria-live="polite"></div>
+    <div class="opy-chat-actions">
+      <button type="button" id="opy-chat-load" class="btn-yellow">Ativar assistente</button>
+      <button type="button" id="opy-chat-clear" class="opy-chat-clear">Limpar conversa</button>
+    </div>
+    <form id="opy-chat-form" class="opy-chat-form">
+      <label class="sr-only" for="opy-chat-input">Mensagem para o Saíra</label>
+      <textarea id="opy-chat-input" rows="2" placeholder="Escreva sua mensagem..." disabled></textarea>
+      <button type="submit" id="opy-chat-send" class="btn-green" disabled>Enviar</button>
+    </form>
+  </aside>
+
   <script src="script.js"></script>
+  <script type="module" src="chat.js"></script>
 </body>
 </html>
