@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opylendas - Loja</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header-site">
+    <a href="../index.html"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img"></a>
+    <nav class="nav-links-center">
+      <a href="../index.html">Início</a>
+      <a href="santuario.html">Santuário</a>
+      <a href="diario.html">OpyDiário</a>
+      <a href="loja.html">Loja</a>
+    </nav>
+    <a href="sobre.html" class="sobre-nos-link">
+      <img src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="Sobre nós" class="sobre-nos-img">
+      <span>Sobre nós</span>
+    </a>
+  </header>
+
+  <main class="main-container" style="max-width: 1600px; width: 95%; margin: 0 auto; padding: 2rem 0;">
+    <div class="breadcrumb"><a href="../index.html">Início</a> > Loja</div>
+    <h1 class="page-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Nossa Loja</h1>
+    <p style="margin-bottom: 2.5rem; color: #555; font-size: 1.1rem;">Explore toda a nossa coleção de vestuário, colecionáveis, livros e acessórios exclusivos.</p>
+
+    <div class="character-filters" aria-label="Filtrar produtos por personagem">
+      <button class="character-filter active" type="button" data-personagem="todos">Todos</button>
+      <button class="character-filter" type="button" data-personagem="Jaciel">Jaciel</button>
+      <button class="character-filter" type="button" data-personagem="Naiá">Naiá</button>
+      <button class="character-filter" type="button" data-personagem="Saíra">Saíra</button>
+      <button class="character-filter" type="button" data-personagem="Saci">Saci</button>
+      <button class="character-filter" type="button" data-personagem="Cuca">Cuca</button>
+      <button class="character-filter" type="button" data-personagem="Mapinguari">Mapinguari</button>
+    </div>
+
+    <div class="store-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; width: 100%;">
+
+      <!-- Combos do carrossel -->
+      <div class="product-card combo-card" data-personagens="Naiá" onclick="verDetalhes('Combo Box Naiá', 'R$ 179,90', '../assets/ProdutosCertos/produtos/Box Naia.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Box Naia.png" alt="Combo Box Naiá" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Combo Box Naiá</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 179,90</span></div>
+      </div>
+
+      <div class="product-card combo-card" data-personagens="Cuca" onclick="verDetalhes('Combo Box Cuca', 'R$ 179,90', '../assets/ProdutosCertos/produtos/Box Cuca.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Box Cuca.png" alt="Combo Box Cuca" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Combo Box Cuca</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 179,90</span></div>
+      </div>
+
+      <div class="product-card combo-card" data-personagens="Saci" onclick="verDetalhes('Combo Box de Café', 'R$ 149,90', '../assets/ProdutosCertos/produtos/Box Cafe.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Box Cafe.png" alt="Combo Box de Café" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Combo Box de Café</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 149,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Jaciel" onclick="verDetalhes('Jaciel Action Figure', 'R$ 129,90', '../assets/ProdutosCertos/produtos/Actionfigure Jaciel.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Actionfigure Jaciel.png" alt="Jaciel Action Figure" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Jaciel Action Figure</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 129,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Naiá" onclick="verDetalhes('Naiá Action Figure', 'R$ 129,90', '../assets/ProdutosCertos/produtos/Actionfigure Naiá.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Actionfigure Naiá.png" alt="Naiá Action Figure" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Naiá Action Figure</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 129,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Saíra" onclick="verDetalhes('Saíra Action Figure', 'R$ 129,90', '../assets/ProdutosCertos/produtos/Actionfigure Saíra-7-cores.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Actionfigure Saíra-7-cores.png" alt="Saíra Action Figure" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Saíra Action Figure</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 129,90</span></div>
+      </div>
+
+      <!-- Pelúcias -->
+      <div class="product-card" data-personagens="Jaciel" onclick="verDetalhes('Pelúcia Jaciel', 'R$ 75,90', '../assets/ProdutosCertos/produtos/Pelucia Jaciel.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Pelucia Jaciel.png" alt="Pelúcia Jaciel" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Pelúcia Jaciel</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 75,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Naiá" onclick="verDetalhes('Pelúcia Naiá', 'R$ 75,90', '../assets/ProdutosCertos/produtos/Pelucia Naiá.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Pelucia Naiá.png" alt="Pelúcia Naiá" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Pelúcia Naiá</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 75,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Saíra" onclick="verDetalhes('Pelúcia Saíra-7-cores', 'R$ 75,90', '../assets/ProdutosCertos/produtos/Pelucia Saíra-7-cores.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Pelucia Saíra-7-cores.png" alt="Pelúcia Saíra-7-cores" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Pelúcia Saíra-7-cores</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 75,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Mapinguari" onclick="verDetalhes('Pelúcia Mapinguari', 'R$ 75,90', '../assets/ProdutosCertos/produtos/Pelucia Mapinguari.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Pelucia Mapinguari.png" alt="Pelúcia Mapinguari" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Pelúcia Mapinguari</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 75,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Saci" onclick="verDetalhes('Pelúcia Saci', 'R$ 75,90', '../assets/ProdutosCertos/produtos/Pelucia Saci.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Pelucia Saci.png" alt="Pelúcia Saci" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Pelúcia Saci</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 75,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Mapinguari" onclick="verDetalhes('Pijama Mapinguari', 'R$ 129,90', '../assets/ProdutosCertos/produtos/Pijama Mapinguari.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Pijama Mapinguari.png" alt="Pijama Mapinguari" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Pijama Mapinguari</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 129,90</span></div>
+      </div>
+
+      <div class="product-card" data-personagens="Mapinguari" onclick="verDetalhes('Balde de Pipoca Mapinguari', 'R$ 69,90', '../assets/ProdutosCertos/produtos/Balde Pipoca Mapinguari.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Balde Pipoca Mapinguari.png" alt="Balde de Pipoca Mapinguari" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Balde de Pipoca Mapinguari</h3><span class="price-promo" style="font-size: 1.1rem;">R$ 69,90</span></div>
+      </div>
+      
+      <!-- Vestuário e Estilo -->
+      <div class="product-card" onclick="verDetalhes('Camiseta Verde OpyLendas', 'R$ 89,90', '../assets/ProdutosCertos/produtos/Camiseta Verde.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Camiseta Verde.png" alt="Camiseta Verde OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Camiseta Verde</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 89,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Camiseta Creme OpyLendas', 'R$ 89,90', '../assets/ProdutosCertos/produtos/Camiseta Creme Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Camiseta Creme Opylendas.png" alt="Camiseta Creme OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Camiseta Creme</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 89,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Moletom Verde OpyLendas', 'R$ 189,90', '../assets/ProdutosCertos/produtos/Moletom Verde Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Moletom Verde Opylendas.png" alt="Moletom Verde OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Moletom Verde</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 189,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Moletom Creme OpyLendas', 'R$ 189,90', '../assets/ProdutosCertos/produtos/Moletom Creme Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Moletom Creme Opylendas.png" alt="Moletom Creme OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Moletom Creme</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 189,90</span></div>
+      </div>
+
+      <!-- Outros produtos -->
+      <div class="product-card" onclick="verDetalhes('Camiseta Preta OpyLendas', 'R$ 89,90', '../assets/ProdutosCertos/produtos/Camiseta Preta Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Camiseta Preta Opylendas.png" alt="Camiseta Preta OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Camiseta Preta OpyLendas</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 89,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Camiseta Preta Saci', 'R$ 89,90', '../assets/ProdutosCertos/produtos/Camiseta Preta Saci.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Camiseta Preta Saci.png" alt="Camiseta Preta Saci" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Camiseta Preta Saci</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 89,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Diário da Cuca', 'R$ 69,90', '../assets/ProdutosCertos/produtos/Diário da Cuca.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Diário da Cuca.png" alt="Diário da Cuca" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Diário da Cuca</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 69,90</span></div>
+      </div>
+
+      <!-- Livros e Mídia -->
+      <div class="product-card" onclick="verDetalhes('Coleção Livros OpyLendas', 'R$ 69,90', '../assets/ProdutosCertos/produtos/Coleção de Livros Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Coleção de Livros Opylendas.png" alt="Coleção Livros OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Coleção Livros OpyLendas</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 69,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('HQ OpyLendas', 'R$ 49,90', '../assets/ProdutosCertos/produtos/HQ Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/HQ Opylendas.png" alt="HQ OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">HQ OpyLendas</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 49,90</span></div>
+      </div>
+
+      <!-- Utilidades e Casa -->
+      <div class="product-card" onclick="verDetalhes('Luminária OpyLendas', 'R$ 99,90', '../assets/ProdutosCertos/produtos/Luminária Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Luminária Opylendas.png" alt="Luminária OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Luminária Lendas</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 99,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Garrafa Transversal Saci', 'R$ 59,90', '../assets/ProdutosCertos/produtos/Garrafa Transversal Saci.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Garrafa Transversal Saci.png" alt="Garrafa Transversal Saci" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Garrafa Saci</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 59,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Copo Térmico com Alça Saci', 'R$ 79,90', '../assets/ProdutosCertos/produtos/Copo térmico com Alça e Canudo Saci.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Copo térmico com Alça e Canudo Saci.png" alt="Copo Térmico com Alça Saci" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Copo Térmico</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 79,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Garrafa com Canudo Verde OpyLendas', 'R$ 64,90', '../assets/ProdutosCertos/produtos/Garrafa Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Garrafa Opylendas.png" alt="Garrafa com Canudo Verde OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Garrafa c/ Canudo</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 64,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Jogo de Café OpyLendas', 'R$ 119,90', '../assets/ProdutosCertos/produtos/Jogo de Café Opylendas.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Jogo de Café Opylendas.png" alt="Jogo de Café OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Jogo de Café</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 119,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Colher de Cerâmica OpyLendas', 'R$ 29,90', '../assets/ProdutosCertos/produtos/Colher Cerâmica Saíra-7-cores.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Colher Cerâmica Saíra-7-cores.png" alt="Colher de Cerâmica OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Cerâmica Colher</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 29,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Xícara Cerâmica OpyLendas', 'R$ 39,90', '../assets/ProdutosCertos/produtos/Caneca Cerâmica Saíra-7-cores.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Caneca Cerâmica Saíra-7-cores.png" alt="Xícara Cerâmica OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Cerâmica Xícara</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 39,90</span></div>
+      </div>
+
+      <!-- Acessórios e Bijuterias -->
+      <div class="product-card" onclick="verDetalhes('Botton Saíra-7-cores', 'R$ 14,90', '../assets/ProdutosCertos/produtos/Botton Saíra-7-cores.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Botton Saíra-7-cores.png" alt="Botton Saíra-7-cores" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Botton Exclusivo</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 14,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Colar Quartzo Branco Jaciel', 'R$ 49,90', '../assets/ProdutosCertos/produtos/Colar Jaciel.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Colar Jaciel.png" alt="Colar Quartzo Branco Jaciel" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Colar Quartzo Branco</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 49,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Colar Naiá', 'R$ 54,90', '../assets/ProdutosCertos/produtos/Colar Naiá.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Colar Naiá.png" alt="Colar Naiá" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Colar da Naiá</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 54,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Brincos Naiá', 'R$ 34,90', '../assets/ProdutosCertos/produtos/Brinco Naiá.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Brinco Naiá.png" alt="Brincos Naiá" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Brinco Naiá</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 34,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Broche Naiá', 'R$ 24,90', '../assets/ProdutosCertos/produtos/Broche Naiá.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Broche Naiá.png" alt="Broche Naiá" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Broche Naiá</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 24,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Broche Colar Cuca', 'R$ 44,90', '../assets/ProdutosCertos/produtos/Broche-Colar Cuca.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Broche-Colar Cuca.png" alt="Broche Colar Cuca" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Broche Colar Cuca</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 44,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Presilha Naiá', 'R$ 19,90', '../assets/ProdutosCertos/produtos/Presilha Naiá.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Presilha Naiá.png" alt="Presilha Naiá" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Prendedor de Cabelo</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 19,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Chapéu da Cuca', 'R$ 79,90', '../assets/ProdutosCertos/produtos/Chapéu Cuca.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Chapéu Cuca.png" alt="Chapéu da Cuca" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Chapéu Cuca</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 79,90</span></div>
+      </div>
+
+      <!-- Chaveiros -->
+      <div class="product-card" onclick="verDetalhes('Chaveiro Jaciel OpyLendas', 'R$ 19,90', '../assets/ProdutosCertos/produtos/Chaveiro Jaciel.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Chaveiro Jaciel.png" alt="Chaveiro Jaciel OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Chaveiro Jaciel</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 19,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Chaveiro Naiá OpyLendas', 'R$ 19,90', '../assets/ProdutosCertos/produtos/Chaveiro Naiá.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Chaveiro Naiá.png" alt="Chaveiro Naiá OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Chaveiro Naiá</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 19,90</span></div>
+      </div>
+
+      <div class="product-card" onclick="verDetalhes('Chaveiro Saíra-7-cores OpyLendas', 'R$ 19,90', '../assets/ProdutosCertos/produtos/Chaveiro Saíra-7-cores.png')" style="padding: 1.2rem;">
+        <div class="product-image-container" style="height: 260px; display: flex; align-items: center; justify-content: center;"><img src="../assets/ProdutosCertos/produtos/Chaveiro Saíra-7-cores.png" alt="Chaveiro Saíra-7-cores OpyLendas" style="max-height: 100%; object-fit: contain;"></div>
+        <div class="product-info" style="margin-top: 1rem;"><h3 class="product-title" style="font-size: 1.2rem;">Chaveiro Saíra</h3><span class="price-promo" style="font-size: 1.3rem;">R$ 19,90</span></div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer-site" style="margin-top: 4rem;">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html">Fale conosco</a>
+        <a href="trocas-devolucoes.html">Trocas e devoluções</a>
+        <a href="rastrear-pedidos.html">Rastrear pedidos</a>
+        <a href="guia-medidas.html">Guia de medidas</a>
+        <a href="carrinho.html">Carrinho</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© Opylendas. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    const filtrosPersonagem = document.querySelectorAll('.character-filter');
+    const cardsProdutos = document.querySelectorAll('.product-card');
+
+    function personagensDoProduto(card) {
+      const texto = `${card.textContent} ${card.querySelector('img')?.alt || ''}`.toLowerCase();
+      const personagens = [];
+      const regras = {
+        'jaciel': ['jaciel', 'quartzo'],
+        'naiá': ['naiá', 'naia'],
+        'saíra': ['saíra', 'saira'],
+        'saci': ['saci'],
+        'cuca': ['cuca'],
+        'mapinguari': ['mapinguari']
+      };
+
+      Object.entries(regras).forEach(([personagem, termos]) => {
+        if (termos.some(termo => texto.includes(termo))) personagens.push(personagem);
+      });
+      return personagens;
+    }
+
+    cardsProdutos.forEach(card => {
+      if (!card.dataset.personagens) card.dataset.personagens = personagensDoProduto(card).join('|');
+    });
+
+    filtrosPersonagem.forEach(filtro => {
+      filtro.addEventListener('click', () => {
+        const personagem = filtro.dataset.personagem.toLowerCase();
+        filtrosPersonagem.forEach(item => item.classList.toggle('active', item === filtro));
+        cardsProdutos.forEach(card => {
+          const tags = card.dataset.personagens.toLowerCase().split('|');
+          card.hidden = personagem !== 'todos' && !tags.includes(personagem);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

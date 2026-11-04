@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1715">
+  <title>Dia do Saci | OpyLendas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="dia-do-saci.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="dia-saci-site">
+  <header class="header-site">
+    <a href="../index.html"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img"></a>
+    <nav class="nav-links-center" aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="santuario.html">Santuário</a>
+      <a href="loja.html">Loja</a>
+      <a href="dia-do-saci.html" aria-current="page">Dia do Saci</a>
+    </nav>
+    <a href="sobre.html" class="sobre-nos-link">
+      <img src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="" class="sobre-nos-img">
+      <span>Sobre nós</span>
+    </a>
+  </header>
+
+  <main class="dia-saci-main">
+    <section class="saci-hero" aria-labelledby="saci-hero-title">
+      <div class="saci-hero-inner">
+        <div class="saci-hero-copy">
+          <p class="saci-eyebrow">31 de outubro <span aria-hidden="true">/</span> Um segredo da mata</p>
+          <h1 id="saci-hero-title">Shhh! É Festa <span>Surpresa!</span></h1>
+          <p class="saci-hero-intro">O Saci tá quase chegando! Preparamos três presentes especiais da mata. Ajude os defensores a escolher e prepare-se para a festa.</p>
+          <div class="saci-hero-actions">
+            <a class="saci-button saci-button-primary" href="#presentes">Escolher um presente <span aria-hidden="true">↓</span></a>
+            <a class="saci-button saci-button-outline" href="#a-lenda">Conheça a lenda</a>
+          </div>
+          <p class="saci-hero-note">Uma surpresa está sendo preparada na mata.</p>
+        </div>
+        <div class="saci-hero-art">
+          <span class="saci-whisper-label">Psiu... não conta pro Saci!</span>
+          <img src="../assets/Chibis/sairatwink.jpg" alt="Saíra fazendo sinal de segredo">
+        </div>
+      </div>
+      <div class="saci-bottom-rule" aria-hidden="true"></div>
+    </section>
+
+    <section class="saci-presentes" id="presentes" aria-labelledby="saci-presentes-title">
+      <div class="saci-presentes-heading">
+        <p class="saci-eyebrow">01 / Especial de aniversário</p>
+        <h2 id="saci-presentes-title">O Saci tá quase chegando!</h2>
+        <p>Escolha o presente que combina mais com ele e ajude a preparar a festa na mata.</p>
+      </div>
+      <div class="saci-presentes-grid">
+        <article class="saci-presente" data-choice="Gravata de Folhas">
+          <div class="saci-presente-arte"><img src="../assets/dia saci/1 opcao presente.png" alt="Gravata de folhas"></div>
+          <h3>Gravata de Folhas</h3>
+          <button class="saci-button saci-button-primary saci-escolher" type="button">Escolher</button>
+        </article>
+        <article class="saci-presente" data-choice="Capuz de Folha Estiloso">
+          <div class="saci-presente-arte"><img src="../assets/dia saci/2 opcao presente.png" alt="Capuz de folha estiloso"></div>
+          <h3>Capuz de Folha Estiloso</h3>
+          <button class="saci-button saci-button-primary saci-escolher" type="button">Escolher</button>
+        </article>
+        <article class="saci-presente" data-choice="Chinelo de Madeira">
+          <div class="saci-presente-arte"><img src="../assets/dia saci/3 opcao presente.png" alt="Chinelo de madeira"></div>
+          <h3>Chinelo de Madeira</h3>
+          <button class="saci-button saci-button-primary saci-escolher" type="button">Escolher</button>
+        </article>
+      </div>
+      <p id="saci-escolha-status" class="saci-escolha-status" aria-live="polite"></p>
+    </section>
+
+    <section class="saci-quiz-festa" aria-labelledby="saci-quiz-title">
+      <div class="saci-quiz-festa-copy">
+        <p class="saci-eyebrow">Dialogo Quiz</p>
+        <h2 id="saci-quiz-title">Ajude o Saci a preparar a festa!</h2>
+        <p>Responda às três perguntas e descubra os itens especiais que vão aparecer na comemoração.</p>
+      </div>
+      <div class="saci-quiz-cards">
+        <article class="saci-quiz-card" data-answer="redemoinho">
+          <span class="saci-quiz-numero">Pergunta 1</span>
+          <h3>O Desafio da Chegada</h3>
+          <p>Como o Saci se desloca pela floresta?</p>
+          <div class="saci-quiz-opcoes"><button type="button" data-correct="false">De barco</button><button type="button" data-correct="true">No redemoinho</button></div>
+          <img src="../assets/dia saci/item 1 bexiga.png" alt="Bexigas de frutas" class="saci-quiz-recompensa">
+        </article>
+        <article class="saci-quiz-card" data-answer="redemoinho">
+          <span class="saci-quiz-numero">Pergunta 2</span>
+          <h3>O Segredo do Esconderijo</h3>
+          <p>Onde fica o segredo da magia do Saci?</p>
+          <div class="saci-quiz-opcoes"><button type="button" data-correct="true">No redemoinho</button><button type="button" data-correct="false">No fundo do rio</button></div>
+          <img src="../assets/dia saci/item 2 varal.png" alt="Guirlanda de folhas" class="saci-quiz-recompensa">
+        </article>
+        <article class="saci-quiz-card" data-answer="travessura">
+          <span class="saci-quiz-numero">Pergunta 3</span>
+          <h3>O Hábito da Lenda</h3>
+          <p>Qual é a brincadeira favorita do Saci na mata?</p>
+          <div class="saci-quiz-opcoes"><button type="button" data-correct="true">Pregar peças</button><button type="button" data-correct="false">Ficar em silêncio</button></div>
+          <img src="../assets/dia saci/item 3 bolo.png" alt="Bolo de aniversário" class="saci-quiz-recompensa">
+        </article>
+      </div>
+      <div class="saci-quiz-feedback" aria-live="polite"></div>
+      <img class="saci-quiz-arte" id="saci-quiz-arte" src="../assets/dia saci/saci_quiz.png" alt="Saci pensando no desafio">
+    </section>
+
+    <section class="saci-easter" aria-labelledby="saci-easter-title">
+      <div>
+        <p class="saci-eyebrow">Easter egg</p>
+        <h2 id="saci-easter-title">Colete os itens escondidos da festa</h2>
+        <p>Encontre os três símbolos da mata para revelar uma surpresa extra.</p>
+      </div>
+      <button type="button" class="saci-button saci-button-primary" id="saci-abrir-coleta">Abrir coleta secreta</button>
+    </section>
+
+    <dialog class="saci-coleta-dialog" id="saci-coleta-dialog" aria-labelledby="saci-coleta-titulo">
+      <button type="button" class="saci-coleta-fechar" id="saci-fechar-coleta" aria-label="Fechar coleta">×</button>
+      <p class="saci-eyebrow">Easter egg de coleta</p>
+      <h2 id="saci-coleta-titulo">Itens da festa</h2>
+      <div class="saci-itens-coleta">
+        <div data-item="1"><img src="../assets/Chibis/pop up_item1.png" alt="Item secreto um"><span>Escondido na página inicial</span></div>
+        <div data-item="2"><img src="../assets/Chibis/pop up_item2.png" alt="Item secreto dois"><span>Escondido no Santuário</span></div>
+        <div data-item="3"><img src="../assets/Chibis/pop up_item3.png" alt="Item secreto três"><span>Escondido no OpyDiário</span></div>
+      </div>
+      <p class="saci-coleta-status" id="saci-coleta-status" aria-live="polite">0 de 3 itens encontrados</p>
+      <div class="saci-brindes hidden" id="saci-brindes"><p>Você encontrou a surpresa!</p><img src="../assets/Chibis/brinde_posicao1.png" alt="Brinde secreto um"><img src="../assets/Chibis/brinde_posicao2.png" alt="Brinde secreto dois"></div>
+    </dialog>
+
+    <section class="saci-lenda" id="a-lenda" aria-labelledby="saci-lenda-title">
+      <div class="saci-section-heading">
+        <p class="saci-eyebrow">A lenda</p>
+        <h2 id="saci-lenda-title">Pequeno no tamanho.<br><span>Imenso nas histórias.</span></h2>
+      </div>
+      <div class="saci-lenda-copy">
+        <p>O Saci-Pererê é um dos personagens mais conhecidos do folclore brasileiro. Nas histórias populares, ele aparece como um menino de uma perna só, com gorro vermelho e ligado aos redemoinhos.</p>
+        <p>Travesso e impossível de ignorar, o Saci atravessa gerações em contos que mudam de região para região. O Dia do Saci é um convite para conhecer, compartilhar e manter vivas essas narrativas.</p>
+      </div>
+      <ul class="saci-motifs" aria-label="Marcas do Saci nas histórias populares">
+        <li><span>01</span> Gorro vermelho</li>
+        <li><span>02</span> Redemoinho</li>
+        <li><span>03</span> Travessuras lendárias</li>
+      </ul>
+    </section>
+
+    <section class="saci-celebracao" aria-labelledby="saci-celebracao-title">
+      <img src="../assets/Personagens/Saci_SobrePersonagem.png" alt="Ilustração do Saci Pererê" class="saci-celebracao-art">
+      <div class="saci-celebracao-copy">
+        <p class="saci-eyebrow">O folclore continua</p>
+        <h2 id="saci-celebracao-title">A história não para no redemoinho.</h2>
+        <p>Explore o universo OpyLendas, descubra outros personagens e leve um pedacinho do Saci com você.</p>
+        <div class="saci-hero-actions">
+          <a class="saci-button saci-button-primary" href="loja.html">Explorar a loja <span aria-hidden="true">→</span></a>
+          <a class="saci-text-link" href="personagens.html">Conhecer os personagens</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-site">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index.html">Início</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="loja.html">Loja</a>
+        <a href="curiosidades.html">Curiosidades</a>
+      </div>
+      <div class="footer-bottom"><span>© Opylendas. Todos os direitos reservados.</span></div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.saci-escolher').forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.saci-presente');
+        document.querySelectorAll('.saci-presente').forEach(item => item.classList.toggle('selecionado', item === card));
+        document.querySelectorAll('.saci-escolher').forEach(item => {
+          item.textContent = item === button ? 'Escolhido' : 'Escolher';
+          item.setAttribute('aria-pressed', String(item === button));
+        });
+        document.getElementById('saci-escolha-status').textContent = `Você escolheu: ${card.dataset.choice}. O segredo continua guardado até o Saci chegar!`;
+      });
+    });
+
+    document.querySelectorAll('.saci-quiz-card').forEach(card => {
+      card.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', () => {
+          card.classList.remove('quiz-certo', 'quiz-errado');
+          const correto = button.dataset.correct === 'true';
+          card.classList.add(correto ? 'quiz-certo' : 'quiz-errado');
+          card.querySelectorAll('button').forEach(item => item.disabled = true);
+          document.querySelector('.saci-quiz-feedback').textContent = correto ? 'Acertou! O item da festa foi revelado.' : 'Quase! O Saci deixou uma pista para a próxima pergunta.';
+          const arteQuiz = document.getElementById('saci-quiz-arte');
+          arteQuiz.src = correto ? '../assets/dia saci/saci_quiz.png' : '../assets/dia saci/saci_quiz_errou.png';
+          arteQuiz.alt = correto ? 'Saci pensando no desafio' : 'Saci surpreso com a resposta';
+          card.querySelector('.saci-quiz-recompensa').classList.add('visivel');
+        });
+      });
+    });
+
+    const coletaDialog = document.getElementById('saci-coleta-dialog');
+    function atualizarColeta() {
+      const coletaItens = new Set(JSON.parse(localStorage.getItem('opylendas-itens-festa') || '[]'));
+      document.querySelectorAll('.saci-itens-coleta [data-item]').forEach(item => {
+        const encontrado = coletaItens.has(item.dataset.item);
+        item.classList.toggle('coletado', encontrado);
+        item.querySelector('span').textContent = encontrado ? 'Encontrado' : item.querySelector('span').textContent;
+      });
+      document.getElementById('saci-coleta-status').textContent = `${coletaItens.size} de 3 itens encontrados`;
+      if (coletaItens.size === 3) document.getElementById('saci-brindes').classList.remove('hidden');
+    }
+
+    document.getElementById('saci-abrir-coleta').addEventListener('click', () => {
+      atualizarColeta();
+      coletaDialog.showModal();
+    });
+    document.getElementById('saci-fechar-coleta').addEventListener('click', () => coletaDialog.close());
+  </script>
+</body>
+</html>

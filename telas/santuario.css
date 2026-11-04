@@ -1,0 +1,152 @@
+.santuario-experiencia {
+  --sanctuary-forest: #173c2a;
+  --sanctuary-forest-deep: #0c2418;
+  --sanctuary-gold: #e4b951;
+  --sanctuary-orange: #c2532b;
+  --sanctuary-cream: #fffcee;
+  background: var(--sanctuary-cream);
+  color: #203b2b;
+}
+
+.santuario-abertura {
+  min-height: 184px;
+  padding: 17px 24px 27px;
+  text-align: center;
+}
+
+.santuario-breadcrumb { display: flex; justify-content: center; gap: 9px; margin-bottom: 22px; color: #496253; font-size: 0.88rem; }
+.santuario-breadcrumb a { color: inherit; text-decoration: none; }
+.santuario-breadcrumb a:hover { color: var(--sanctuary-orange); }
+.santuario-selo { margin: 0 0 8px; color: #8b5b19; font-size: 0.71rem; font-weight: 700; text-transform: uppercase; }
+.santuario-abertura h1 { margin: 0; color: #214b35; font-family: 'Noto Serif', serif; font-size: 2rem; }
+.santuario-abertura > p:last-child { margin: 8px auto 0; color: #617264; font-size: 0.95rem; }
+
+.santuario-selecao { padding: 0 0 16px; }
+.santuario-selecao-cabecalho { display: flex; width: min(1120px, 92%); align-items: end; justify-content: space-between; gap: 18px; margin: 0 auto 18px; }
+.santuario-selecao-cabecalho .santuario-selo { margin-bottom: 4px; }
+.santuario-selecao-cabecalho h2 { margin: 0; color: #214b35; font-family: 'Noto Serif', serif; font-size: 1.55rem; }
+.santuario-contagem { color: #68776b; font-size: 0.78rem; }
+
+.santuario-lendas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.santuario-lenda {
+  position: relative;
+  display: grid;
+  min-height: 244px;
+  grid-template-rows: auto auto 1fr auto;
+  justify-items: center;
+  gap: 7px;
+  padding: 18px 20px 13px;
+  border: 0;
+  color: #fffcee;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  transition: filter 160ms ease, min-height 180ms ease;
+}
+
+.santuario-lenda-saci { background: var(--sanctuary-gold); color: #263b2e; }
+.santuario-lenda-mapinguari { background: var(--sanctuary-forest); }
+.santuario-lenda-cuca { background: var(--sanctuary-orange); }
+.santuario-lenda:hover { filter: brightness(1.05); }
+.santuario-lenda:focus-visible { z-index: 1; outline: 3px solid #fffcee; outline-offset: -7px; }
+.santuario-lenda.selecionada { min-height: 260px; }
+.santuario-lenda-numero { font-size: 0.65rem; font-weight: 700; opacity: 0.82; }
+.santuario-lenda-nome { font-family: 'Noto Serif', serif; font-size: 1.35rem; }
+.santuario-lenda-icone { display: block; width: 116px; height: 116px; align-self: center; object-fit: contain; }
+.santuario-lenda-acao { display: flex; width: min(180px, 100%); justify-content: space-between; padding: 7px 0 0; border-top: 1px solid currentColor; font-size: 0.78rem; font-weight: 700; }
+.santuario-lenda-acao span { font-size: 1rem; line-height: 1; }
+
+.santuario-ficha {
+  display: grid;
+  min-height: 510px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+  background: var(--sanctuary-forest-deep);
+  color: var(--sanctuary-cream);
+}
+
+.santuario-ficha-arte {
+  position: relative;
+  display: flex;
+  min-height: 510px;
+  align-items: end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 38px 24px 0;
+  background-image: linear-gradient(90deg, rgba(4, 25, 15, 0.08), rgba(4, 25, 15, 0.02) 70%), var(--santuario-arte, url('../assets/santuario/santuario_saci.png'));
+  background-position: left center;
+  background-size: auto 100%;
+}
+
+.santuario-ficha-identidade { display: none; }
+.santuario-ficha-marca { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--sanctuary-gold); border-radius: 50%; color: var(--sanctuary-gold); font-size: 1.2rem; }
+.santuario-ficha-identidade .santuario-selo { margin-bottom: 3px; color: #f1d78f; }
+.santuario-ficha-identidade h2 { margin: 0; color: var(--sanctuary-cream); font-family: 'Noto Serif', serif; font-size: clamp(1.8rem, 3.2vw, 2.8rem); }
+.santuario-personagem-arte { display: none; }
+.santuario-ficha-assinatura { position: absolute; bottom: 23px; left: 24px; color: #f2dfad; font-family: 'Noto Serif', serif; font-size: 0.92rem; font-style: italic; }
+
+.santuario-ficha-conteudo {
+  align-self: center;
+  margin: 24px clamp(20px, 4vw, 58px) 24px 0;
+  padding: clamp(22px, 3vw, 38px);
+  border: 1px solid rgba(255, 252, 238, 0.5);
+  border-radius: 24px 24px 4px 24px;
+  background: rgba(7, 34, 20, 0.68);
+}
+
+.santuario-ficha-conteudo .santuario-selo { color: var(--sanctuary-gold); }
+.santuario-ficha-conteudo h2 { margin: 0 0 15px; color: var(--sanctuary-cream); font-family: 'Noto Serif', serif; font-size: clamp(1.55rem, 2.5vw, 2rem); text-align: center; }
+.santuario-ficha-descricao { min-height: 82px; margin: 0 0 22px; color: #e5e8dd; font-size: 0.95rem; font-style: italic; line-height: 1.55; text-align: center; }
+
+.santuario-dados { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; margin: 0; }
+.santuario-dados div { display: flex; min-height: 72px; flex-direction: column; justify-content: center; gap: 4px; padding: 11px 14px; border: 1px solid rgba(255, 252, 238, 0.42); border-radius: 18px; }
+.santuario-dados dt { color: #f0ce75; font-family: 'Noto Serif', serif; font-size: 0.82rem; font-weight: 700; }
+.santuario-dados dd { margin: 0; color: #fffcee; font-size: 0.82rem; line-height: 1.35; }
+
+.santuario-ficha-acoes { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 22px; }
+.santuario-ficha-link { color: #f0ce75; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
+.santuario-ficha-link:hover { color: #fffcee; text-decoration: underline; text-underline-offset: 4px; }
+.santuario-ficha-link-secundario { color: #dce7de; }
+.santuario-ficha-link-voltar { flex-basis: 100%; }
+.santuario-ficha-link:focus-visible { outline: 2px solid #fffcee; outline-offset: 4px; }
+
+@keyframes santuario-aparecer {
+  from { opacity: 0.45; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .santuario-ficha { grid-template-columns: minmax(0, 1fr) minmax(340px, 0.95fr); }
+  .santuario-ficha-arte { min-height: 460px; }
+  .santuario-ficha-conteudo { margin-right: 20px; }
+}
+
+@media (max-width: 680px) {
+  .santuario-abertura { min-height: 0; padding: 17px 18px 30px; }
+  .santuario-abertura h1 { font-size: 1.8rem; }
+  .santuario-selecao-cabecalho { align-items: center; }
+  .santuario-lenda { min-height: 190px; gap: 5px; padding: 14px 8px 11px; }
+  .santuario-lenda.selecionada { min-height: 204px; }
+  .santuario-lenda-numero { font-size: 0.53rem; }
+  .santuario-lenda-nome { font-size: 1rem; }
+  .santuario-lenda-icone { width: min(100%, 88px); height: 88px; }
+  .santuario-lenda-acao { width: 100%; font-size: 0.69rem; }
+  .santuario-ficha { grid-template-columns: 1fr; }
+  .santuario-ficha-arte { min-height: 380px; background-position: center center; background-size: cover; }
+  .santuario-ficha-identidade { top: 22px; left: 20px; }
+  .santuario-ficha-conteudo { margin: -1px 14px 18px; padding: 22px 18px; border-radius: 4px 4px 18px 18px; }
+  .santuario-dados { gap: 8px; }
+  .santuario-dados div { min-height: 68px; padding: 9px 11px; }
+}
+
+@media (max-width: 360px) {
+  .santuario-lenda { min-height: 176px; padding-inline: 5px; }
+  .santuario-lenda.selecionada { min-height: 188px; }
+  .santuario-lenda-numero { font-size: 0.47rem; }
+  .santuario-lenda-nome { font-size: 0.9rem; }
+  .santuario-lenda-icone { height: 76px; }
+  .santuario-dados { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .santuario-lenda { transition: none; animation: none; }
+}

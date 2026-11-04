@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opylendas - Detalhes do Produto</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .detalhes-wrapper {
+      display: flex;
+      gap: 3rem;
+      background: #2A4A35;
+      color: #fbf8f3;
+      padding: 3rem;
+      border-radius: 20px;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .detalhes-midia {
+      flex: 1;
+      min-width: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fbf8f3;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 2px solid #e8e2d5;
+    }
+    .detalhes-midia img {
+      max-width: 100%;
+      max-height: 450px;
+      object-fit: contain;
+    }
+    .detalhes-info {
+      flex: 1.2;
+      min-width: 320px;
+    }
+    .preco-antigo {
+      text-decoration: line-through;
+      color: #b3c9bc;
+      font-size: 1.1rem;
+    }
+    .preco-atual {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #f7e8ad;
+      margin: 0.3rem 0;
+    }
+    .parcelamento {
+      color: #dce7e0;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .secao-tamanhos {
+      margin-bottom: 1.5rem;
+    }
+    .tamanhos-grid {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .btn-tamanho {
+      background: transparent;
+      border: 1px solid #fbf8f3;
+      color: #fbf8f3;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .btn-tamanho.active, .btn-tamanho:hover {
+      background: #fbf8f3;
+      color: #2A4A35;
+      border-color: #fbf8f3;
+    }
+    .secao-qtd {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .qtd-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #fbf8f3;
+      border-radius: 25px;
+      overflow: hidden;
+      background: rgba(251, 248, 243, 0.1);
+    }
+    .qtd-btn {
+      background: none;
+      border: none;
+      color: #fbf8f3;
+      font-size: 1.3rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .qtd-val {
+      padding: 0 0.5rem;
+      font-weight: bold;
+    }
+    .btn-comprar {
+      width: 100%;
+      background: #fbf8f3;
+      color: #2A4A35;
+      border: none;
+      padding: 1.2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      transition: 0.3s;
+    }
+    .btn-comprar:hover {
+      background: #f2ebd9;
+      transform: translateY(-2px);
+    }
+    .box-frete {
+      margin-top: 2rem;
+      background: rgba(251, 248, 243, 0.12);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(251, 248, 243, 0.2);
+    }
+    .frete-input-group {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .frete-input-group input {
+      flex: 1;
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #fbf8f3;
+      background: #fbf8f3;
+      color: #333;
+    }
+    .frete-input-group button {
+      background: #1b3123;
+      color: #fbf8f3;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .frete-input-group button:hover {
+      background: #122218;
+    }
+    .box-cupom {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(251, 248, 243, 0.15);
+      opacity: 0.82;
+    }
+    .box-cupom label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cupom-input-group {
+      display: flex;
+      max-width: 320px;
+      gap: 0.35rem;
+    }
+    .cupom-input-group input {
+      min-width: 0;
+      flex: 1;
+      padding: 0.42rem 0.55rem;
+      border-radius: 5px;
+      border: 1px solid rgba(251, 248, 243, 0.45);
+      background: rgba(251, 248, 243, 0.9);
+      color: #333;
+      font-size: 0.82rem;
+    }
+    .cupom-input-group button {
+      padding: 0.42rem 0.7rem;
+      border: none;
+      border-radius: 5px;
+      background: #1b3123;
+      color: #fbf8f3;
+      cursor: pointer;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .box-cupom small {
+      display: block;
+      margin-top: 0.35rem;
+      color: #dfe8df;
+      font-size: 0.7rem;
+    }
+    .box-descricao {
+      margin-top: 2.5rem;
+      background: #fbf8f3;
+      color: #222;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid #e8e2d5;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-site">
+    <a href="../index.html"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img"></a>
+    <nav class="nav-links-center">
+      <a href="../index.html">Início</a>
+      <a href="santuario.html">Santuário</a>
+      <a href="diario.html">OpyDiário</a>
+      <a href="loja.html">Loja</a>
+    </nav>
+    <a href="sobre.html" class="sobre-nos-link">
+      <img src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="Sobre nós" class="sobre-nos-img">
+      <span>Sobre nós</span>
+    </a>
+  </header>
+
+  <main class="main-container" style="max-width: 1400px; width: 95%; margin: 0 auto;">
+    <div class="breadcrumb" style="color:#666;"><a href="../index.html">Início</a> > <a href="loja.html">Loja</a> > <span id="bread-nome">Produto</span></div>
+    
+    <div class="detalhes-wrapper">
+      <div class="detalhes-midia">
+        <button class="zoom-trigger" type="button" onclick="alternarZoom()" aria-label="Ampliar imagem do produto">
+          <img id="prod-img" src="../assets/Logos/logo oficial sem grafismo - cor creme.png" alt="Produto Opylendas">
+        </button>
+      </div>
+
+      <div class="detalhes-info">
+        <h1 id="prod-nome" style="font-size: 2rem; font-family: 'Noto Serif', serif;">Nome do Produto</h1>
+        
+        <div style="margin-top: 1rem;">
+          <span class="preco-antigo" id="prod-antigo">R$ 109,90</span>
+          <div class="preco-atual" id="prod-preco">R$ 89,90</div>
+          <div class="parcelamento">12x de R$ 9,15 no cartão sem juros</div>
+        </div>
+
+        <div class="secao-tamanhos" id="secao-tamanho" style="display: none;">
+          <label style="font-weight: 600;">TAMANHO:</label>
+          <div class="tamanhos-grid">
+            <button class="btn-tamanho" onclick="selecionarTamanho(this)">PP</button>
+            <button class="btn-tamanho" onclick="selecionarTamanho(this)">P</button>
+            <button class="btn-tamanho active" onclick="selecionarTamanho(this)">M</button>
+            <button class="btn-tamanho" onclick="selecionarTamanho(this)">G</button>
+            <button class="btn-tamanho" onclick="selecionarTamanho(this)">GG</button>
+          </div>
+        </div>
+
+        <div class="secao-qtd">
+          <label style="font-weight: 600;">QUANTIDADE:</label>
+          <div class="qtd-box">
+            <button class="qtd-btn" onclick="alterarQtd(-1)">-</button>
+            <span class="qtd-val" id="qtd-num">1</span>
+            <button class="qtd-btn" onclick="alterarQtd(1)">+</button>
+          </div>
+        </div>
+
+        <button class="btn-comprar" onclick="comprarAgora()">Adicionar ao Carrinho</button>
+
+        <div class="box-frete">
+          <label style="font-size: 0.9rem; font-weight: 600;">MEIOS DE ENVIO</label>
+          <div class="frete-input-group">
+            <input type="text" placeholder="Seu CEP">
+            <button onclick="alert('Frete Grátis para todo o Brasil em compras acima de R$ 199,00!')">CALCULAR</button>
+          </div>
+        </div>
+
+        <div class="box-cupom">
+          <label for="cupom-input">Cupom de desconto</label>
+          <div class="cupom-input-group">
+            <input id="cupom-input" type="text" placeholder="Digite o cupom" style="text-transform: uppercase;" />
+            <button type="button" onclick="aplicarCupom()">APLICAR</button>
+          </div>
+          <small id="cupom-status">Use o cupom da conquista secreta.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-descricao">
+      <h2 style="font-family: 'Noto Serif', serif; color: #2A4A35; margin-bottom: 1rem;" id="desc-titulo">Descrição do Produto</h2>
+      <p id="prod-desc" style="line-height: 1.8; color: #444; font-size: 1.05rem;">
+        Este produto oficial Opylendas traz o melhor da nossa cultura e lendas brasileiras em um item de altíssima qualidade. Perfeito para colecionar, presentear e levar a força do nosso folclore onde quer que você vá.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer-site" style="margin-top: 4rem;">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html">Fale conosco</a>
+        <a href="trocas-devolucoes.html">Trocas e devoluções</a>
+        <a href="rastrear-pedidos.html">Rastrear pedidos</a>
+        <a href="guia-medidas.html">Guia de medidas</a>
+        <a href="carrinho.html">Carrinho</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© Opylendas. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    let quantidade = 1;
+
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get('nome');
+    const preco = params.get('preco');
+    const img = params.get('img');
+    const desc = params.get('desc');
+
+    if (nome) {
+      document.getElementById('prod-nome').innerText = nome;
+      document.getElementById('bread-nome').innerText = nome;
+      document.getElementById('desc-titulo').innerText = nome;
+
+      const nomeMin = nome.toLowerCase();
+      if (nomeMin.includes('camiseta') || nomeMin.includes('moletom')) {
+        document.getElementById('secao-tamanho').style.display = 'block';
+      }
+    }
+
+    if (preco) {
+      document.getElementById('prod-preco').innerText = preco;
+      
+      let valorNum = parseFloat(preco.replace('R$', '').replace(',', '.').trim());
+      if (!isNaN(valorNum)) {
+        let antigo = (valorNum * 1.25).toFixed(2).replace('.', ',');
+        document.getElementById('prod-antigo').innerText = `R$ ${antigo}`;
+      }
+    }
+
+    if (img) document.getElementById('prod-img').src = img;
+    if (desc && desc !== 'undefined') document.getElementById('prod-desc').innerText = desc;
+
+    function alternarZoom() {
+      document.querySelector('.zoom-trigger').classList.toggle('zoom-active');
+    }
+
+    function selecionarTamanho(btn) {
+      document.querySelectorAll('.btn-tamanho').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function alterarQtd(val) {
+      quantidade += val;
+      if (quantidade < 1) quantidade = 1;
+      document.getElementById('qtd-num').innerText = quantidade;
+    }
+
+    function comprarAgora() {
+      const tamanhoSelecionado = document.querySelector('.btn-tamanho.active');
+      const valorAtual = document.getElementById('prod-preco').textContent || 'R$ 0,00';
+      const precoNumerico = parseFloat(valorAtual.replace('R$', '').replace('.', '').replace(',', '.').trim());
+      adicionarProdutoAoCarrinho({
+        nome: nome || 'Produto Opylendas',
+        preco: precoNumerico,
+        img: img || '../assets/Logos/logo oficial sem grafismo - cor creme.png',
+        quantidade,
+        tamanho: tamanhoSelecionado ? tamanhoSelecionado.innerText : ''
+      });
+      alert('Produto adicionado ao seu carrinho com sucesso!');
+      window.location.href = 'carrinho.html';
+    }
+  </script>
+</body>
+</html>

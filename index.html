@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opylendas - Início</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header-site">
+    <a href="index.html">
+      <img src="assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img">
+    </a>
+    <nav class="nav-links-center">
+      <a href="index.html">Início</a>
+      <a href="telas/santuario.html">Santuário</a>
+      <a href="telas/diario.html">OpyDiário</a>
+      <a href="telas/loja.html">Loja</a>
+    </nav>
+    <a href="telas/sobre.html" class="sobre-nos-link">
+      <img src="assets/Logos/Grafismo Flor Livro Aberto.png" alt="Sobre nós" class="sobre-nos-img">
+      <span>Sobre nós</span>
+    </a>
+  </header>
+
+  <div class="carrossel-container">
+    <div class="carrossel-slides">
+      <div class="slide active"><img src="assets/Carrossel/Promoção Box Naiá.png" alt="Promoção Box Naiá"></div>
+      <div class="slide"><img src="assets/Carrossel/Promoção Box de Café.png" alt="Promoção Box de Café"></div>
+      <div class="slide"><img src="assets/Carrossel/Promoção box cuca.png" alt="Promoção Box Cuca"></div>
+    </div>
+    <button class="carrossel-btn btn-prev" onclick="mudarSlide(-1)">
+      <span aria-hidden="true">&#8249;</span><span class="sr-only">Anterior</span>
+    </button>
+    <button class="carrossel-btn btn-next" onclick="mudarSlide(1)">
+      <span aria-hidden="true">&#8250;</span><span class="sr-only">Próximo</span>
+    </button>
+    <div class="carrossel-indicadores">
+      <span class="dot active" onclick="irParaSlide(0)"></span>
+      <span class="dot" onclick="irParaSlide(1)"></span>
+      <span class="dot" onclick="irParaSlide(2)"></span>
+    </div>
+  </div>
+
+  <main class="main-container home-page">
+    <div class="banner-produtos-home">
+      <div class="banner-produtos-img">
+        <img src="assets/Personagens/Jaciel e Naiá Moletom.png" alt="Jaciel e Naiá usando moletom OpyLendas">
+      </div>
+      <div class="banner-produtos-texto">
+        <h2>Conheça nossos produtos!</h2>
+        <p>O vestuário e colecionáveis que trazem os mitos e lendas do folclore brasileiro direto para o seu estilo.</p>
+        <a href="telas/loja.html" class="btn-yellow" style="text-decoration:none; display:inline-block;">Loja</a>
+      </div>
+    </div>
+
+    <div class="menu-cards-container">
+      <div class="menu-grid-top">
+        <div class="card-box card-green-large">
+          <h2>Conheça os personagens</h2>
+          <a href="telas/personagens.html" class="btn-yellow" style="text-decoration:none;">Conhecer</a>
+        </div>
+        <div class="right-column">
+          <div class="card-box card-yellow">
+            <h2>Conheça o Opy</h2>
+            <a href="telas/sobre.html" class="btn-green" style="text-decoration:none;">Sobre</a>
+          </div>
+          <div class="card-box card-orange">
+            <h2>Desvende os Segredos</h2>
+            <a href="telas/curiosidades.html" class="btn-yellow" style="text-decoration:none;">Curiosidades</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-site">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="telas/sobre.html">Sobre nós</a>
+        <a href="telas/contato.html">Fale conosco</a>
+        <a href="telas/trocas-devolucoes.html">Trocas e devoluções</a>
+        <a href="telas/rastrear-pedidos.html">Rastrear pedidos</a>
+        <a href="telas/guia-medidas.html">Guia de medidas</a>
+        <a href="telas/carrinho.html">Carrinho</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© Opylendas. Todos os direitos reservados.</span>
+        <div class="misterio-wrap">
+          <button type="button" class="misterio" onclick="ativarSaci()">🌀 Mistério</button>
+          <div id="misterio-conquista" class="misterio-conquista hidden" aria-live="polite">
+            <div class="misterio-popup-card">
+              <button type="button" class="misterio-fechar" aria-label="Fechar mistério" onclick="ativarSaci()">×</button>
+              <span class="misterio-rotulo">Segredo revelado</span>
+              <img id="misterio-mapinguari" src="assets/Chibis/MapinguariKonami Code.png" alt="Mapinguari secreto" />
+              <p class="misterio-dica">Dica: ↑ ↑ ↓ ↓ ← → ← → B A</p>
+              <span id="misterio-cupom" class="misterio-cupom hidden">Cupom: MAPINGUARI15</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

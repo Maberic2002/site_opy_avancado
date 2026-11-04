@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opylendas - Curiosidades</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header-site">
+    <a href="../index.html"><img src="../assets/Logos/Logo opylendas Claro Novo.png" alt="Opylendas" class="logo-img"></a>
+    <nav class="nav-links-center">
+      <a href="../index.html">Início</a>
+      <a href="santuario.html">Santuário</a>
+      <a href="diario.html">OpyDiário</a>
+      <a href="loja.html">Loja</a>
+    </nav>
+    <a href="sobre.html" class="sobre-nos-link">
+      <img src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="Sobre nós" class="sobre-nos-img">
+      <span>Sobre nós</span>
+    </a>
+  </header>
+
+  <main class="main-container curiosidades-page">
+    <div class="breadcrumb"><a href="../index.html">Início</a> &gt; Curiosidades</div>
+
+    <section class="curiosidades-intro">
+      <div>
+        <span class="curiosidades-eyebrow">Arquivo OpyLendas</span>
+        <h1 class="page-title">Curiosidades</h1>
+        <p>Um olhar por trás do universo, dos símbolos e das escolhas que dão vida ao nosso santuário digital.</p>
+      </div>
+      <img class="curiosidades-intro-mark" src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="Grafismo de livro aberto">
+    </section>
+
+    <div class="curiosidades-lista">
+      <article class="curiosidade-card curiosidade-destaque">
+        <div class="curiosidade-imagem">
+          <img src="../assets/Curiosidades/Floresta Verde - Mundo Opylendas.png" alt="Floresta verde do mundo OpyLendas">
+        </div>
+        <div class="curiosidade-texto">
+          <span class="curiosidade-numero">01 · universo</span>
+          <h2>Mundo OpyLendas</h2>
+          <p>A narrativa de OpyLendas é ambientada nas florestas do Brasil pré-colonial, recriadas de forma lúdica e viva.</p>
+          <p>Explore o Santuário pelo menu superior para conhecer e descobrir onde cada lenda habita.</p>
+        </div>
+      </article>
+
+      <article class="curiosidade-card curiosidade-invertida">
+        <div class="curiosidade-imagem">
+          <img src="../assets/Curiosidades/Significado Nome Opylendas.png" alt="Representação do significado do nome OpyLendas">
+        </div>
+        <div class="curiosidade-texto">
+          <span class="curiosidade-numero">02 · origem</span>
+          <h2>A Origem do Nome</h2>
+          <p>Na tradição Tupi-Guarani, Opy é a casa de rezas: um local sagrado de conexão e espiritualidade.</p>
+          <p>Ao unir esse conceito a Lendas, a OpyLendas se torna um santuário digital criado para resgatar, respeitar e preservar o folclore brasileiro no mundo contemporâneo.</p>
+        </div>
+      </article>
+
+      <article class="curiosidade-card curiosidade-formas">
+        <div class="curiosidade-imagem">
+          <img src="../assets/Curiosidades/As formas dos Personagens.png" alt="Formas e silhuetas dos personagens OpyLendas">
+        </div>
+        <div class="curiosidade-texto">
+          <span class="curiosidade-numero">03 · criação</span>
+          <h2>As formas das Lendas</h2>
+          <p>Você sabia que a psicologia das formas define a essência de um personagem? Usamos esse conceito para dar vida aos personagens.</p>
+          <p>Confira no <a href="diario.html">OpyDiário</a> como foi todo esse processo criativo.</p>
+        </div>
+      </article>
+    </div>
+
+    <button class="saci-segredo" type="button" onclick="abrirSaciCuriosidades()" aria-label="Descobrir o segredo do Saci">
+      <img src="../assets/Chibis/Pop Up Saci Correndo.png" alt="Saci correndo">
+    </button>
+
+    <div id="saci-conquista" class="misterio-conquista hidden" role="dialog" aria-modal="true" aria-labelledby="saci-titulo" onclick="fecharSaciCuriosidades(event)">
+      <div class="misterio-popup-card saci-popup-card">
+        <button type="button" class="misterio-fechar" aria-label="Fechar recompensa do Saci" onclick="fecharSaciCuriosidades()">×</button>
+        <span class="misterio-rotulo">Segredo do Saci</span>
+        <h2 id="saci-titulo">Você pegou o danado!</h2>
+        <img src="../assets/Chibis/Pop Up Saci Careca e Bravo.png" alt="Saci careca e bravo">
+        <p>O Saci ficou bravo, mas deixou um presente para você.</p>
+        <span class="misterio-cupom ativo">Cupom: TOUCADOSACI · 10% OFF</span>
+      </div>
+    </div>
+
+    <a class="segredo-mapa" href="mapa.html" aria-label="Abrir o mapa secreto de OpyLendas">
+      <span class="segredo-mapa-icone">
+        <img src="../assets/Logos/Grafismo Flor Livro Aberto.png" alt="Livro aberto">
+      </span>
+      <span>
+        <strong>Você encontrou um segredo</strong>
+        <small>Descubra o mapa secreto de OpyLendas</small>
+      </span>
+      <span class="segredo-mapa-seta" aria-hidden="true">↗</span>
+    </a>
+  </main>
+
+  <footer class="footer-site">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html">Fale conosco</a>
+        <a href="trocas-devolucoes.html">Trocas e devoluções</a>
+        <a href="rastrear-pedidos.html">Rastrear pedidos</a>
+        <a href="guia-medidas.html">Guia de medidas</a>
+        <a href="carrinho.html">Carrinho</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© Opylendas. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
